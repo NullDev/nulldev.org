@@ -1,0 +1,80 @@
+/* ========================= */
+/* = Copyright (c) NullDev = */
+/* ========================= */
+
+$r: #DC143C;
+$o: orange;
+$y: #FF0;
+$g: #0F0;
+$b: #0000CD;
+
+@keyframes rgbBg {
+    0%,100% {
+        background-color: $r;
+    }
+
+    20% {
+        background-color: $o;
+    }
+
+    40% {
+        background-color: $y;
+    }
+
+    60% {
+        background-color: $g;
+    }
+
+    80% {
+        background-color: $b;
+    }
+}
+
+@keyframes rgbText {
+    0%,100% {
+        color: $r;
+        border-color: $r;
+    }
+
+    20% {
+        color: $o;
+        border-color: $o;
+    }
+
+    40% {
+        color: $y;
+        border-color: $y;
+    }
+
+    60% {
+        color: $g;
+        border-color: $g;
+    }
+
+    80% {
+        color: $b;
+        border-color: $b;
+    }
+}
+
+@keyframes rgbBg {
+    0%,100% {
+        background-color: $r;
+    }
+
+    20% {
+        background-color: $o;
+    }
+
+    40% {
+        background-color: $y;
+    }
+
+    60% {
+        background-color: $g;
+    }
+
+    80% {
+        background-color: $b;
+    }
+}

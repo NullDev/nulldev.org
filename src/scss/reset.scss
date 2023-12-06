@@ -1,0 +1,65 @@
+/* ========================= */
+/* = Copyright (c) NullDev = */
+/* ========================= */
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    color: #BBB;
+    background: url("/img/circuit.png") #191a1c;
+    padding-top: 0;
+    top: 0;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1, h2, h4 {
+    font-weight: lighter;
+    color: #FFF;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #EEE;
+}
+
+a {
+    color: #63B06B;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #FFF;
+    transition: .5s;
+    cursor: pointer;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.btn, h1, h2, h4 {
+    -webkit-font-smoothing: antialiased
+}
+
+.btn, .btn-icon, .text-center {
+    text-align: center
+}
