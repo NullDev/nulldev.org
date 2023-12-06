@@ -27,7 +27,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd /var/www/nulldev.org/nulldev-source
-          pwd
+          cd ${{ secrets.REPO_PATH }}
           chmod +x ./action.deploy.sh
           ./action.deploy.sh
