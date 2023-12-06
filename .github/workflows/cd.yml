@@ -27,6 +27,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd ${{ secrets.REPO_PATH }}
+          cd "${{ secrets.REPO_PATH }}"
           chmod +x ./action.deploy.sh
           ./action.deploy.sh
