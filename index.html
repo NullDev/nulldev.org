@@ -74,7 +74,11 @@
             <div id="panel"> 
                 <div class="text-center"> 
                     <a href="/"> 
-                        <img src="/img/logo.png" class="img-responsive img-circle img-thumbnail logo" alt="NullDev"> 
+                        <picture>
+                            <source srcset="/img/logo.webp" type="image/webp">
+                            <source srcset="/img/logo.png" type="image/png">
+                            <img src="/img/logo.png" class="img-responsive img-circle img-thumbnail logo"  width="150px" height="150px" alt="NullDev">
+                        </picture>
                     </a> 
                     <h1>NullDev</h1> 
                     <hr> 
