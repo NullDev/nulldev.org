@@ -7,9 +7,14 @@
   "scripts": {
     "start:dev": "vite",
     "start:build": "vite build",
-    "start:serve": "vite preview",
+    "start:preview": "vite preview",
+    "blog:dev": "vitepress dev blog",
+    "blog:build": "vitepress build blog",
+    "blog:preview": "vitepress preview blog",
+    "blog:new": "node blog/.vitepress/theme/scripts/newPost.cjs",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "build": "npm run start:build && npm run blog:build"
   },
   "engines": {
     "node": ">=20.1.0"

@@ -7,9 +7,11 @@
         "es2022": true,                     // ESNext support
         "es6": true                         // enable all ECMAScript 6 features
     },
-    "parser": "@babel/eslint-parser",       // npm install @babel/eslint-parser @babel/core eslint --save-dev
+    "extends": ["plugin:vue/base"],         // https://eslint.vuejs.org/user-guide/#usage
+    "parser": "vue-eslint-parser",          // npm install @babel/eslint-parser @babel/core eslint --save-dev
     "parserOptions": {
         "ecmaVersion": "latest",            // set highest possible version
+        "parser": "@babel/eslint-parser",   // npm install @babel/eslint-parser @babel/core eslint --save-dev
         "sourceType": "module",             // prefer ES Modules (doesn't require "use strict")
         "requireConfigFile": false,         // make babel not look for config
         "babelOptions": {
@@ -19,7 +21,8 @@
     },
     "ignorePatterns": [                     // Ignore dist folders and dependencies
         "dist",
-        "node_modules"
+        "node_modules",
+        "!.vitepress"
     ],
     "rules": {
         /**

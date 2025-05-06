@@ -99,6 +99,16 @@ class BgManager {
      * @public
      * @memberof BgManager
      */
+    /**
+     *
+     *
+     * @memberof BgManager
+     */
+    /**
+     *
+     *
+     * @memberof BgManager
+     */
     init(){
         this.#initParticles();
         this.#animateParticles();
