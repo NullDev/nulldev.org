@@ -1,3 +1,16 @@
+---
+date: 2025-05-06
+title: On DEVS and Determinism
+outline: deep
+tags:
+- devs
+- determinism
+- philosophy
+---
+Epistemic Laplacian Determinism
+
+---
+
 # On DEVS and Determinism: Epistemic Laplacian Determinism
 
 *What if the universe is deterministic, but only from the outside?*

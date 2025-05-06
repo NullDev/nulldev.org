@@ -1,12 +1,11 @@
 ---
-date: 2023-07-12
-title: MathJax Demo
+date: 2023-09-21
+title: Code Demo
 outline: deep
 tags:
-- mathjax
+- code
 - demo
 ---
-
 MathJax
 
 ---

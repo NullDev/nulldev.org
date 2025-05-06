@@ -1,7 +1,7 @@
-<script setup lang='js'>
-const props = defineProps({
-    text: String,
-});
+<script setup lang='ts'>
+const props = defineProps<{
+  text: string
+}>()
 </script>
 
 <template>

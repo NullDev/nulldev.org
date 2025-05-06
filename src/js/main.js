@@ -52,6 +52,7 @@ const initKonami = function(){
             document.querySelectorAll("canvas").forEach(el => {
                 el.classList.toggle("rgbb");
             });
+            document.querySelector("a#idk")?.classList.toggle("hidden");
         }
     });
 };

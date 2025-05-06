@@ -1,27 +1,27 @@
 import { defineConfig } from "vitepress";
+import themeConfig from "./theme/config";
+import mdFootnote from "markdown-it-footnote";
 
+const root = themeConfig.base ? themeConfig.base.slice(0, -1) : "";
+
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
-    head: [["link", { rel: "icon", href: "/favicon.png" }]],
-    base: "/blog/",
-    lang: "en-EN",
-    title: "NullDev Blog",
-    outDir: "../dist/blog",
-    description: "A blog powered by VitePress",
-    lastUpdated: true,
-    cacheDir: "./node_modules/vitepress_cache",
-    appearance: "dark",
-    cleanUrls: true,
+    head: [
+        ["link", { rel: "icon", href: root + themeConfig.favicon }],
+    ],
+    base: themeConfig.base,
+    lang: themeConfig.lang,
+    title: themeConfig.title,
+    description: themeConfig.description,
+    lastUpdated: themeConfig.lastUpdated,
+    cacheDir: themeConfig.cacheDir,
+    appearance: themeConfig.appearance,
+    cleanUrls: themeConfig.cleanUrls,
     themeConfig: {
-        nav: [
-            { text: "📚 Blog", link: "/" },
-            { text: "🏠 Home", link: "../" },
-            { text: "🔖 Tags", link: "/tags" },
-        ],
-        logo: "/img/logo.png",
-        socialLinks: [
-            { icon: "github", link: "https://github.com/NullDev" },
-            { icon: "twitter", link: "https://twitter.com/null_ping" },
-        ],
+    // https://vitepress.dev/reference/default-theme-config
+        nav: themeConfig.nav,
+        logo: themeConfig.logo,
+        socialLinks: themeConfig.socialLinks,
         search: {
             provider: "local",
             options: {
@@ -33,15 +33,17 @@ export default defineConfig({
                 },
             },
         },
-        footer: {
-            message: `© NullDev ${new Date().getFullYear()}`,
+        footer: themeConfig.footer,
+    },
+    // https://vitepress.dev/guide/markdown#advanced-configuration
+    markdown: {
+        math: themeConfig.mdMath,
+        lineNumbers: themeConfig.mdLineNums,
+        config: (md) => {
+            md.use(mdFootnote);
         },
     },
-    markdown: {
-        math: true,
-        lineNumbers: true,
-    },
     sitemap: {
-        hostname: "https://nulldev.org",
+        hostname: themeConfig.hostname,
     },
 });

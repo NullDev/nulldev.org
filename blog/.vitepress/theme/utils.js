@@ -12,20 +12,6 @@ export function initArchives(posts){
     return data;
 }
 
-export function initCategory(posts){
-    const data = {};
-    for (let i = 0; i < posts.length; i++){
-        const post = posts[i];
-        const {category} = post;
-        if (!data[category]){
-            data[category] = [];
-        }
-        data[category].push(post);
-    }
-
-    return data;
-}
-
 export function initTags(posts){
     const data = {};
     for (let i = 0; i < posts.length; i++){
