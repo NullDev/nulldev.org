@@ -86,6 +86,26 @@ const uwu = function(e){
     }
 };
 
+/**
+ * Get my age from my birthday
+ *
+ */
+const bday = function(){
+    const day = "1999-05-29";
+    const today = new Date();
+    const birthDate = new Date(day);
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    const span = document.getElementById("bday");
+    if (!span) return;
+
+    if (
+        today.getMonth() < birthDate.getMonth()
+        || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
+    ) age--;
+    span.textContent = String(age);
+};
+
 (() => {
     const bgManager = new BgManager("particles");
     bgManager.init();
@@ -94,6 +114,7 @@ const uwu = function(e){
         welcome();
         stripLinks();
         initKonami();
+        bday();
 
         document.getElementById("idk")?.addEventListener("click", uwu);
     });
