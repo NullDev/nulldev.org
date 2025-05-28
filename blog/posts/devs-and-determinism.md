@@ -14,7 +14,7 @@ Epistemic Laplacian Determinism
 # On DEVS and Determinism: Epistemic Laplacian Determinism
 
 *What if the universe is deterministic, but only from the outside?*
-This question forms the core of a perspective I call **Epistemic Laplacian Determinism**. It's a way to reconcile determinism with unpredictability, quantum weirdness, and the apparent presence of free will. It also helps explain why the show *Devs* (2020) gets determinism fundamentally wrong.
+This question forms the core of a perspective I call **Epistemic Laplacian Determinism**. It's a way to reconcile determinism with unpredictability, quantum weirdness, and the apparent presence of free will. It also helps explain why the show *Devs* (2020) - as well as a lot of people - get determinism fundamentally wrong.
 
 ## The Devs Mistake
 
@@ -110,7 +110,3 @@ It holds that:
 From outside, everything is determined.
 From within, everything feels open.
 Both can be true.
-
----
-
-*If the universe is a simulation, maybe it’s not about code — but about who’s watching.*
