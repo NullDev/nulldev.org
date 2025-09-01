@@ -27,6 +27,12 @@ export default {
     build: {
         minify: "terser",
         cssMinify: "lightningcss",
+        rollupOptions: {
+            input: {
+                main: "index.html",
+                notfound: "404.html",
+            },
+        },
     },
     plugins: [{
         name: "post-build",

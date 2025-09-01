@@ -8,7 +8,7 @@ import BgManager from "./bg/bgManager.js";
 /**
  * Get a random element from an array
  *
- * @param {Array} e
+ * @param {Array<any>} e
  * @return {any}
  */
 const rand = e => e[Math.floor(Math.random() * e.length)];
