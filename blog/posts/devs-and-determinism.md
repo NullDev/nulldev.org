@@ -1,5 +1,5 @@
 ---
-date: 2025-05-06
+date: 2025-09-01
 title: On DEVS and Determinism
 outline: deep
 tags:

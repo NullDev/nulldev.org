@@ -521,3 +521,11 @@ hr {
   top: 13px !important;
   line-height: 24.5px !important;
 }
+
+/*************************
+ * LaTeX
+ *************************/
+
+.MathJax {
+  font-size: 1.1em;
+}
