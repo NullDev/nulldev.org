@@ -19,9 +19,8 @@ html, body {
 }
 
 /*************************
- * Layout Constraints - Like Main Page
+ * Layout Constraints
  *************************/
-/* Constrain the main content width like your main page panel */
 .VPContent {
   background: var(--vp-c-bg);
   max-width: 1200px;
@@ -96,14 +95,13 @@ hr {
   color: #0f0f0f;
 }
 
-/* Read more button - different style from round buttons */
 .theme-readmore {
   padding: 8px 16px;
   border-radius: 6px;
   font-size: .85em;
   font-weight: 600;
   background: var(--vp-c-brand);
-  color: #0f0f0f;
+  color: #0f0f0f !important;
   border: 1px solid var(--vp-c-brand);
   text-decoration: none;
   display: inline-block;
@@ -112,7 +110,7 @@ hr {
 
 .theme-readmore:hover {
   background: transparent;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand) !important;
   border-color: var(--vp-c-brand);
 }
 
@@ -135,6 +133,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top: 20px;
 }
 
 .post-card {
@@ -143,11 +142,6 @@ hr {
   border-radius: 6px;
   padding: 1.5rem;
   transition: all 0.2s ease;
-}
-
-.post-card:hover {
-  border-color: var(--vp-c-brand);
-  box-shadow: 0 2px 20px rgba(99,176,107,.25);
 }
 
 .post-card h2, .post-card h3 {
@@ -173,6 +167,11 @@ hr {
   padding: .2rem .6rem;
   font-size: .8rem;
   margin-right: .25rem;
+}
+
+.theme-badge:hover, .tag:hover {
+  background: var(--vp-c-brand);
+  color: #0f0f0f;
 }
 
 /*************************
