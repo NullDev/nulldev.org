@@ -14,5 +14,7 @@ npm run start:build
 
 echo Copying files ...
 cp -r ./dist/* ../public_html
+mkdir -p ../public_html/blog
+cp -r ./blog/.vitepress/dist/* ../public_html/blog/
 
 echo Deploy finished!
