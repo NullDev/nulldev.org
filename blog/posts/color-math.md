@@ -9,7 +9,7 @@ Some cool math explained with colors.
 
 ---
 
-# Color Math
+# Color Maths
 
 Based on Kalid Azad's [ColorizedMath](https://betterexplained.com/ColorizedMath/)
 
