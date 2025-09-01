@@ -440,6 +440,7 @@ hr {
 .VPDoc .content h1 {
   font-size: 2em;
   letter-spacing: 2px;
+  line-height: 35px;
 }
 
 .VPDoc .content h2 {

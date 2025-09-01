@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export function initArchives(posts){
     const data = {};
     for (let i = 0; i < posts.length; i++){
