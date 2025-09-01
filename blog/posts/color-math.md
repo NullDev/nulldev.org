@@ -11,7 +11,7 @@ Some cool math explained with colors.
 
 # Color Maths
 
-Based on Kalid Azad's [ColorizedMath](https://betterexplained.com/ColorizedMath/)
+Because it helps to know which part of an equation does what.
 
 ## Bayes' Theorem
 
@@ -142,7 +142,7 @@ $\textcolor{Magenta}{\text{stop counting after}}$ $\textcolor{Cyan}{k}$ $\textco
 
 A maybe different way to think about imaginary numbers: <br>
 - **What's an imaginary number?**
-  - A number pointing sideways (North/South) isntead of the typical East/West number line.
+  - A number pointing sideways (North/South) instead of the typical East/West number line.
 - **What does i mean?**
   - $i$, by itself, points North. Multiplying by $i$ rotates you $90$ degrees. $2$ rotations points you backwards $(i \cdot i = -1)$, $4$ rotations spins you around fully $(i^4 = 1)$
 <br>
@@ -188,7 +188,7 @@ $$
 \textcolor{Pink}{\frac{1}{N}
 \sum_{n=0}^{N-1}}
 \, \textcolor{Cyan}{x_n}\,
-\textcolor{Magenta}{e^{i \textcolor{Orange}{2 \pi} \textcolor{LightGreen}{k} $\textcolor{Pink}{\tfrac{n}{N}}}}
+\textcolor{Magenta}{e^{i \textcolor{Orange}{2 \pi} \textcolor{LightGreen}{k} \textcolor{Pink}{\tfrac{n}{N}}}}
 $$
 
 To find $\textcolor{Yellow}{\text{the energy}}$ $\textcolor{LightGreen}{\text{at a particular frequency}}$,  
@@ -310,10 +310,28 @@ To $\textcolor{Pink}{\text{convolve}}$ $\textcolor{Cyan}{\text{a kernel}}$ with 
 $\textcolor{Magenta}{\text{flip the signal}}$, $\textcolor{Orange}{\text{move to the desired time}}$,  
 and $\textcolor{Yellow}{\text{accumulate every interaction}}$ $\textcolor{Cyan}{\text{with the kernel}}$.
 
+## Derivative
+
+<br>
+
+$$
+\frac{\textcolor{Cyan}{d \textcolor{Pink}{f}}}{\textcolor{LightGreen}{d t}}
+\;\;=\;\;
+\textcolor{Yellow}{\lim_{\textcolor{Magenta}{h}\to 0}}
+\;\frac{\textcolor{White}{f(t+\textcolor{Magenta}{h})} \; \textcolor{Orange}{- f(t)}}{\textcolor{Magenta}{h}}
+$$
+
+Take the $\textcolor{White}{\text{new value}}$ $\textcolor{Orange}{\text{minus the old value}}$ to get the change of value of the quantity,  
+then divide by the $\textcolor{Magenta}{\text{time interval}}$,  
+and let that interval $\textcolor{Yellow}{\text{tend to 0}}$ to get the  
+$\textcolor{Cyan}{\text{rate of change}}$ $\textcolor{Pink}{\text{of quantity}}$ $\textcolor{LightGreen}{\text{with respect to time}}$.
+
 <br>
 
 ---
 
 Wow, you made it to the bottom. Here, have a cookie: 🍪
+
+<sub>Loosely based on Kalid Azad's [ColorizedMath](https://betterexplained.com/ColorizedMath/) - but cleaned up and extended.</sub>
 
 ---
