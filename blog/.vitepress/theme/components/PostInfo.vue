@@ -9,9 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <dl class='pb-2'>
-    <dt class='text-base leading-6 font-medium text-gray-500 dark:text-gray-300'>
-        <span class='theme-date'>📆{{ date }}</span>
-    </dt>
-  </dl>
+  <div class='post-info'>
+    <span class='post-date'>📆 {{ date }}</span>
+  </div>
 </template>

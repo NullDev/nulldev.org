@@ -29,11 +29,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class='grid'>
-    <span class='mb-2 justify-self-center  font-bold text-xl sm:text-2xl 
-      text-cyan-700 dark:text-cyan-100'>
+  <div class='post-header'>
+    <h1 class='post-title'>
       {{ frontmatter.title }}
-    </span>
-    <PostInfo class='justify-self-center' :date='frontmatter.date.slice(0, 10)' />
+    </h1>
+    <PostInfo class='post-meta' :date='frontmatter.date.slice(0, 10)' />
   </div>
 </template>

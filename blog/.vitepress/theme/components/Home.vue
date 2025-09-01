@@ -17,26 +17,27 @@ function showPosts() {
 
 <template>
   <div class='theme-container'>
-    <ul class='divide-y divide-gray-600'>
-      <li class='mb-6 p-6' v-for='post of showPosts()'>
-        <article class='space-y-2 xl:space-y-0 xl:items-baseline'>
+    <div class='VPDoc container'>
+      <h1>Blog Posts</h1>
+      <hr>
+      <div class='post-list'>
+        <article v-for='post of showPosts()' class='post-card'>
           <PostInfo :date='post.date.string' />
-          <h2 class='pb-2 text-2xl leading-8 font-bold tracking-tight' 
-            aria-label='post title'>
-            <a class='text-gray-900 dark:text-white' :href='withBase(post.url)'>
+          <h2 class='post-title'>
+            <a :href='withBase(post.url)'>
               {{post.title}} 
             </a>
           </h2>
-          <div v-if='post.excerpt' class='theme-excerpt'
+          <div v-if='post.excerpt' class='excerpt'
             v-html='post.excerpt'></div>
-          <div class='grid text-base leading-6 font-medium'>
+          <div class='post-actions'>
             <a class='theme-readmore' aria-label='read more' :href='withBase(post.url)'>
               Read more
             </a>
           </div>
         </article>
-      </li>
-    </ul>
-    <Pagination />
+      </div>
+      <Pagination />
+    </div>
   </div>
 </template>

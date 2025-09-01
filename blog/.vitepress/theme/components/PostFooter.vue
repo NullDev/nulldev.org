@@ -30,22 +30,26 @@ function selectTag(tag: string) {
 </script>
 
 <template>
-  <div class='flex flex-wrap justify-center'>
-    <a v-for='tag in frontmatter.tags' :href='tagsURL' @click='selectTag(tag)'
-      class='justify-self-center text-gray-500 dark:text-gray-300 my-1'>
-      <span class='theme-badge'>{{ tag }}</span>
-    </a>
-  </div>
-  <div class='mt-5 md:flex'>
-    <div class='text-center my-3 md:my-0 md:w-1/2' aria-label='previous post'>
-      <a class='theme-prev' v-show='prevUrl' :href='prevUrl'>
-        Prev: {{ prevTitle }}
+  <div class='post-footer'>
+    <div class='post-tags'>
+      <a v-for='tag in frontmatter.tags' 
+         :href='tagsURL' 
+         @click='selectTag(tag)'
+         class='tag-link'>
+        <span class='theme-badge'>{{ tag }}</span>
       </a>
     </div>
-    <div class='text-center my-3 md:my-0 md:w-1/2' aria-label='next post'>
-      <a class='theme-next' v-show='nextUrl' :href='nextUrl'>
-        Next: {{ nextTitle }}
-      </a>
+    <div class='post-navigation'>
+      <div class='nav-prev' aria-label='previous post'>
+        <a class='nav-link' v-show='prevUrl' :href='prevUrl'>
+          ← Prev: {{ prevTitle }}
+        </a>
+      </div>
+      <div class='nav-next' aria-label='next post'>
+        <a class='nav-link' v-show='nextUrl' :href='nextUrl'>
+          Next: {{ nextTitle }} →
+        </a>
+      </div>
     </div>
   </div>
 </template>

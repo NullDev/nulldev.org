@@ -70,27 +70,20 @@ function showPages(action: string) {
 </script>
 
 <template>
-  <nav class='flex justify-center pt-6' v-show='totalPages > 1' aria-label='page navigation'>
-    <ul class='flex'>
-      <li>
-        <span class='theme-pagination rounded-l-lg' @click.prevent="showPages('prev')">
-          <span class='sr-only'>Previous</span>
-          <ChevronLeftIcon class='h-5 w-5' aria-hidden='true' />
-        </span>
-      </li>
-      <li v-for='page in genPages()'>
-        <span @click.prevent='goPage(page)' 
-          :class="blogStore.currentPage === (page + 1) 
-          ? 'theme-pagination-clicked theme-pagination' : 'theme-pagination'">
-          {{ page + 1 }}
-        </span>
-      </li>
-      <li>
-        <span class='theme-pagination rounded-r-lg' @click.prevent="showPages('next')">
-          <span class='sr-only'>Next</span>
-          <ChevronRightIcon class='h-5 w-5' aria-hidden='true' />
-        </span>
-      </li>
-    </ul>
+  <nav class='pagination' v-show='totalPages > 1' aria-label='page navigation'>
+    <a href='#' class='pagination-nav' @click.prevent="showPages('prev')">
+      <span class='sr-only'>Previous</span>
+      <ChevronLeftIcon class='pagination-icon' aria-hidden='true' />
+    </a>
+    <a v-for='page in genPages()' 
+       href='#' 
+       @click.prevent='goPage(page)' 
+       :class="blogStore.currentPage === (page + 1) ? 'current' : ''">
+      {{ page + 1 }}
+    </a>
+    <a href='#' class='pagination-nav' @click.prevent="showPages('next')">
+      <span class='sr-only'>Next</span>
+      <ChevronRightIcon class='pagination-icon' aria-hidden='true' />
+    </a>
   </nav>
 </template>

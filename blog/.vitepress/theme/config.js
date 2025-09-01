@@ -10,7 +10,7 @@ const themeConfig = {
     lastUpdated: true,
     cacheDir: "./node_modules/vitepress_cache",
     appearance: /** @type {boolean | "dark" | "force-dark" | "force-auto" | (Omit<Boolean, "initialValue"> & { initialValue?: "dark" | undefined; }) | undefined} */ (
-        "dark"
+        "force-dark"
     ),
     cleanUrls: true,
     mdMath: true,  // math equations
