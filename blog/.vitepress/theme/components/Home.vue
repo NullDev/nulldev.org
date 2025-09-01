@@ -19,6 +19,8 @@ function showPosts() {
   <div class='theme-container'>
     <div class='VPDoc container'>
       <h1>Blog Posts</h1>
+      <p>Random thoughts ad infinitum, ad nauseam, ad mortem ...</p>
+      <br>
       <hr>
       <div class='post-list'>
         <article v-for='post of showPosts()' class='post-card'>
