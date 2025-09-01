@@ -1,8 +1,8 @@
-@import "./fonts.scss";
-@import "./animations.scss";
-@import "./media.scss";
-@import "./reset.scss";
-@import "./background.scss";
+@use "./fonts.scss";
+@use "./animations.scss";
+@use "./media.scss";
+@use "./reset.scss";
+@use "./background.scss";
 
 /* ========================= */
 /* = Copyright (c) NullDev = */
@@ -55,6 +55,10 @@ p.tagline {
 }
 
 #idk {
+    &.hidden {
+        display: none !important;
+    }
+
     position: absolute;
     right: 6px;
     bottom: 6px;

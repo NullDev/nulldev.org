@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600;700&display=swap');
+
+:root {
+  --vp-c-brand: #63B06B;
+  --vp-c-brand-light: #7dd384;
+  --vp-c-bg: #141414;
+  --vp-c-bg-soft: #191A1C;
+  --vp-c-divider: #373737;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #bbbbbb;
+  --vp-c-text-3: #7e7e7e;
+}
+
+html, body {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+/*************************
+ * Layout Constraints
+ *************************/
+.VPContent {
+  background: var(--vp-c-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.VPDoc, .VPHome, .VPPage {
+  background: var(--vp-c-bg);
+}
+
+/* Container width constraints */
+.VPDoc .container, .VPHome .container, .VPPage .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Blog home page specific */
+.VPHome .container {
+  padding-top: 3rem;
+}
+
+/* Tags page specific */
+.VPPage .container {
+  padding-top: 3rem;
+}
+
+/*************************
+ * Typography
+ *************************/
+.VPDoc h1, .VPHome h1, .VPPage h1 {
+  color: var(--vp-c-text-1);
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.VPDoc h2, .VPHome h2, .VPPage h2,
+.VPDoc h3, .VPHome h3, .VPPage h3,
+.VPDoc h4, .VPHome h4, .VPPage h4 {
+  color: var(--vp-c-text-1);
+  font-weight: 300;
+}
+
+.VPDoc p, .VPHome p, .VPPage p {
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+hr {
+  border-top-color: var(--vp-c-divider);
+}
+
+/*************************
+ * Buttons
+ *************************/
+.btn, .VPButton, .button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: .9em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 1px solid var(--vp-c-brand);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn:hover, .VPButton:hover, .button:hover {
+  background: var(--vp-c-brand);
+  color: #0f0f0f;
+}
+
+.theme-readmore {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: .85em;
+  font-weight: 600;
+  background: var(--vp-c-brand);
+  color: #0f0f0f !important;
+  border: 1px solid var(--vp-c-brand);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.theme-readmore:hover {
+  background: transparent;
+  color: var(--vp-c-brand) !important;
+  border-color: var(--vp-c-brand);
+}
+
+/*************************
+ * Links
+ *************************/
+.VPDoc a, .VPHome a, .VPPage a { 
+  color: var(--vp-c-brand); 
+  text-decoration: none; 
+}
+
+.VPDoc a:hover, .VPHome a:hover, .VPPage a:hover { 
+  color: var(--vp-c-text-1); 
+}
+
+/*************************
+ * Post Cards
+ *************************/
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+.post-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.post-card h2, .post-card h3 {
+  color: var(--vp-c-text-1);
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.post-card .excerpt {
+  margin-top: .5rem;
+  color: var(--vp-c-text-3);
+}
+
+/*************************
+ * Tags & Badges
+ *************************/
+.theme-badge, .tag {
+  display: inline-block;
+  background: rgba(99,176,107,.15);
+  color: var(--vp-c-brand);
+  border: 1px solid var(--vp-c-brand);
+  border-radius: 12px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+  margin-right: .25rem;
+}
+
+.theme-badge:hover, .tag:hover {
+  background: var(--vp-c-brand);
+  color: #0f0f0f;
+}
+
+/*************************
+ * Navigation & Sidebar
+ *************************/
+.VPNavBar {
+  background: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebar { 
+  background: var(--vp-c-bg); 
+  border-right: 1px solid var(--vp-c-divider); 
+}
+
+.VPSidebar .link { 
+  color: var(--vp-c-text-2); 
+}
+
+.VPSidebar .link:hover { 
+  color: var(--vp-c-text-1); 
+}
+
+.VPDocOutline { 
+  background: var(--vp-c-bg); 
+  border-left: 1px solid var(--vp-c-divider); 
+}
+
+.VPDocOutline .outline-title { 
+  color: var(--vp-c-text-3); 
+  font-weight: 600; 
+}
+
+.VPDocOutline .outline-link { 
+  color: var(--vp-c-text-2);
+}
+
+.VPDocOutline .outline-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+/*************************
+ * Footer
+ *************************/
+.VPFooter {
+  background: var(--vp-c-bg);
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-3);
+}
+
+/*************************
+ * Post Components
+ *************************/
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  color: var(--vp-c-text-1);
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.post-meta {
+  color: var(--vp-c-text-3);
+  font-size: 0.9rem;
+}
+
+.post-actions {
+  margin-top: 1rem;
+}
+
+.post-info {
+  margin-bottom: 0.5rem;
+}
+
+.post-date {
+  color: var(--vp-c-text-3);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/*************************
+ * Pagination
+ *************************/
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination a {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+  border-color: var(--vp-c-brand);
+  color: var(--vp-c-text-1);
+}
+
+.pagination .current {
+  background: var(--vp-c-brand);
+  color: #0f0f0f;
+  border-color: var(--vp-c-brand);
+}
+
+.pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+}
+
+.pagination-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--vp-c-text-2);
+}
+
+.pagination-nav:hover .pagination-icon {
+  color: var(--vp-c-text-1);
+}
+
+/*************************
+ * Tags Component
+ *************************/
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tag-link {
+  text-decoration: none;
+}
+
+.tag-title {
+  color: var(--vp-c-text-1);
+  font-weight: 300;
+  margin: 1rem 0 0.5rem;
+}
+
+.tag-posts {
+  margin-top: 1rem;
+}
+
+.tag-post-link {
+  text-decoration: none;
+  color: var(--vp-c-text-2);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.tag-post-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+.tag-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tag-post-link:hover .tag-post {
+  border-color: var(--vp-c-divider);
+  background: rgba(99,176,107,.05);
+}
+
+.tag-post-title {
+  flex: 1;
+  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag-post-date {
+  color: var(--vp-c-text-3);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/*************************
+ * Page Title
+ *************************/
+.page-title {
+  font-size: 2.5em;
+  font-weight: 100;
+  color: var(--vp-c-text-1);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/*************************
+ * Post Footer
+ *************************/
+.post-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-prev, .nav-next {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-link {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-divider);
+  background: rgba(99,176,107,.05);
+}
+
+/*************************
+ * Blog Post Content
+ *************************/
+.VPDoc .content h1,
+.VPDoc .content h2,
+.VPDoc .content h3,
+.VPDoc .content h4,
+.VPDoc .content h5,
+.VPDoc .content h6 {
+  color: var(--vp-c-text-1);
+  font-weight: 300;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.VPDoc .content h1 {
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.VPDoc .content h2 {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.VPDoc .content p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc .content ul,
+.VPDoc .content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc .content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.VPDoc .content blockquote {
+  border-left: 4px solid var(--vp-c-brand);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--vp-c-text-3);
+  font-style: italic;
+}
+
+.VPDoc .content code {
+  background: rgba(99,176,107,.1);
+  color: var(--vp-c-brand);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.VPDoc .content pre {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.VPDoc .content pre code {
+  background: transparent;
+  color: var(--vp-c-text-2);
+  padding: 0;
+}
+
+/*************************
+ * Code blocks
+ *************************/
+
+.vp-doc div[class*='language-'] {
+  background-color: unset !important;
+}
+
+.vp-doc [class*='language-'] > button.copy + span.lang {
+  top: 14px !important;
+}
+
+.vp-doc [class*='language-']:hover > button.copy + span.lang {
+  opacity: 1 !important;
+}
+
+.vp-doc [class*='language-'] > button.copy {
+  top: 39px !important;
+}
+
+.vp-doc .line-numbers-wrapper {
+  top: 13px !important;
+  line-height: 24.5px !important;
+}
+
+/*************************
+ * LaTeX
+ *************************/
+
+.MathJax {
+  font-size: 1.1em;
+}
