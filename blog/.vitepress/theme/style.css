@@ -496,3 +496,28 @@ hr {
   color: var(--vp-c-text-2);
   padding: 0;
 }
+
+/*************************
+ * Code blocks
+ *************************/
+
+.vp-doc div[class*='language-'] {
+  background-color: unset !important;
+}
+
+.vp-doc [class*='language-'] > button.copy + span.lang {
+  top: 14px !important;
+}
+
+.vp-doc [class*='language-']:hover > button.copy + span.lang {
+  opacity: 1 !important;
+}
+
+.vp-doc [class*='language-'] > button.copy {
+  top: 39px !important;
+}
+
+.vp-doc .line-numbers-wrapper {
+  top: 13px !important;
+  line-height: 24.5px !important;
+}
