@@ -2,8 +2,8 @@ const themeConfig = {
     // https://vitepress.dev/reference/site-config
     base: "/blog/",
     lang: "en-EN",
-    logo: "/avatar.png",
-    favicon: "/favicon.png",
+    logo: "https://nulldev.org/img/favicon.png",
+    favicon: "https://nulldev.org/img/favicon.png",
     title: "NullDev Blog",
     description: "Random thoughts ad infinitum, ad nauseam, ad mortem",
     hostname: "https://nulldev.org",
@@ -17,8 +17,8 @@ const themeConfig = {
     mdLineNums: true,  // line numbers for code block
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-        { text: "📚 Blog", link: "./" },
-        { text: "🏠 Home", link: "../" },
+        { text: "📚 Blog", link: "https://nulldev.org/blog" },
+        { text: "🏠 Home", link: "https://nulldev.org" },
         { text: "🔖 Tags", link: "/tags" },
     ],
     aside: false,
