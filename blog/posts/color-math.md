@@ -140,6 +140,11 @@ $\textcolor{Magenta}{\text{stop counting after}}$ $\textcolor{Cyan}{k}$ $\textco
 
 ## Imaginary Number
 
+A maybe different way to think about imaginary numbers: <br>
+- **What's an imaginary number?**
+  - A number pointing sideways (North/South) isntead of the typical East/West number line.
+- **What does i mean?**
+  - $i$, by itself, points North. Multiplying by $i$ rotates you $90$ degrees. $2$ rotations points you backwards $(i \cdot i = -1)$, $4$ rotations spins you around fully $(i^4 = 1)$
 <br>
 
 $$
@@ -217,7 +222,10 @@ and $\textcolor{Orange}{\text{vertical}}$ coordinates
 
 ## E
 
-The constant e (approximately 2.718) is the base of natural logarithms and arises naturally in many areas of mathematics, especially those involving growth and change.
+The constant $e$ (approximately $2.718$) is the base of natural logarithms and arises naturally in many areas of mathematics, especially those involving growth and change.
+
+- **Why's $e$ special?**
+  - All circles are the unit circle, scaled up. All continuously growing systems are $e^{rt}$, scaled to some rate and time.
 
 ### E (Compound Interest Definition)
 
@@ -302,6 +310,10 @@ To $\textcolor{Pink}{\text{convolve}}$ $\textcolor{Cyan}{\text{a kernel}}$ with 
 $\textcolor{Magenta}{\text{flip the signal}}$, $\textcolor{Orange}{\text{move to the desired time}}$,  
 and $\textcolor{Yellow}{\text{accumulate every interaction}}$ $\textcolor{Cyan}{\text{with the kernel}}$.
 
+<br>
+
 ---
 
-Wow, you made it to the bottom. Here, have a cookie! 🍪
+Wow, you made it to the bottom. Here, have a cookie: 🍪
+
+---
