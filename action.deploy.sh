@@ -5,12 +5,13 @@ git pull
 
 echo Removing old dist ...
 rm -rf ./dist
+rm -rf ./blog/.vitepress/dist
 
 echo Installing dependencies ...
-npm i
+bun i
 
 echo Starting build ...
-npm run start:build
+bun run build
 
 echo Copying files ...
 cp -r ./dist/* ../public_html
