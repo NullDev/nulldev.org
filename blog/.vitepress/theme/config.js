@@ -31,12 +31,11 @@ const themeConfig = {
     },
     // custom theme config
     postsPerPage: 5,
-    utterances: {
+    giscus: {
         repo: "NullDev/nulldev.org",
-        issueTerm: "url",
-        light: "github-light",
-        dark: "photon-dark",
-        label: "blog comment",
+        repoId: "R_kgDOK2aEog",
+        category: "Announcements",
+        categoryId: "DIC_kwDOK2aEos4Cu3o4",
     },
 };
 
