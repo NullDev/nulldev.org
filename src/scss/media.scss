@@ -42,4 +42,16 @@
     .bottom-hint {
         display: none !important;
     }
+
+    #panel .text-center {
+        top: auto !important;
+        transform: translate(-50%, 0) !important;
+    }
+}
+
+@media only screen and (max-height: 580px) {
+    #panel .text-center {
+        top: auto !important;
+        transform: translate(-50%, 0) !important;
+    }
 }

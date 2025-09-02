@@ -89,6 +89,7 @@ p.tagline {
     border: solid #000;
     border-width: 0 1px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    overflow-y: auto;
 
     .text-center {
         width: 66.66666667%;
