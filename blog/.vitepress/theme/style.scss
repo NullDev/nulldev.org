@@ -221,6 +221,7 @@ hr {
   background: var(--vp-c-bg);
   border-top: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-3);
+  padding: 13px !important;
 }
 
 /*************************
@@ -383,9 +384,9 @@ hr {
  * Post Footer
  *************************/
 .post-footer {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--vp-c-divider);
 }
 
 .post-tags {
@@ -497,6 +498,24 @@ hr {
   background: transparent;
   color: var(--vp-c-text-2);
   padding: 0;
+}
+
+.VPDocFooter {
+  margin-top: 2rem !important;
+}
+
+.VPLastUpdated {
+  margin-bottom: 0 !important;
+  border-top: 1px solid var(--vp-c-text-2);
+  padding-left: 3rem;
+  padding-top: 10px;
+  padding-right: 3rem;
+  text-align: center;
+}
+
+.edit-info {
+  padding-bottom: 0 !important;
+  justify-content: center !important;
 }
 
 /*************************

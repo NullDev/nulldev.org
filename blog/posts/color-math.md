@@ -333,5 +333,3 @@ $\textcolor{Cyan}{\text{rate of change}}$ $\textcolor{Pink}{\text{of quantity}}$
 Wow, you made it to the bottom. Here, have a cookie: 🍪
 
 <sub>Loosely based on Kalid Azad's [ColorizedMath](https://betterexplained.com/ColorizedMath/) - but cleaned up and extended.</sub>
-
----
