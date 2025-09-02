@@ -141,6 +141,17 @@ p.tagline {
     }
 }
 
+a.blog-link {
+    display: block;
+    padding-top: 10px;
+
+    span {
+        text-indent: 0 !important;
+        position: relative !important;
+        text-shadow: none;
+    }
+}
+
 .rgb {
     -webkit-animation: .5s linear infinite rgbText;
     animation: .5s linear infinite rgbText;
