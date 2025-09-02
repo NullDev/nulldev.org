@@ -2,6 +2,7 @@
 
 :root {
   --vp-c-brand: #63B06B;
+  --vp-c-brand-1: #63B06B;
   --vp-c-brand-light: #7dd384;
   --vp-c-bg: #141414;
   --vp-c-bg-soft: #191A1C;
@@ -233,7 +234,7 @@ hr {
 .post-title {
   color: var(--vp-c-text-1);
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .post-meta {
