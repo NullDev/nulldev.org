@@ -4,6 +4,7 @@ title: Color Math
 outline: deep
 tags:
 - math
+- equations
 ---
 Some cool math explained with colors.
 
