@@ -214,6 +214,15 @@ hr {
   color: var(--vp-c-text-1);
 }
 
+.VPNavBarMenuLink.active {
+  color: rgb(254, 254, 254) !important;
+  font-weight: bold;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
 /*************************
  * Footer
  *************************/
