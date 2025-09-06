@@ -13,7 +13,7 @@ Weird and Wonderful Number Bases
 
 # Number systems are weird
 
-When we think of number systems, we usually imagine the familiar **base-10** (decimal) or **base-2** (binary). But the idea of a “base” is much more flexible than most people realize. We aren’t restricted to integers ≥ 2. In fact, we can use **fractional bases, irrational bases, and even negative or complex ones**.
+When we think of number systems, we usually imagine the familiar **base-10** (decimal) or **base-2** (binary). But the idea of a “base” is much more flexible than most people realize. We aren't restricted to integers ≥ 2. In fact, we can use **fractional bases, irrational bases, and even negative or complex ones**.
 
 Now, just because we _could_, does that mean we _should_?
 
@@ -55,11 +55,11 @@ Take **base 1.5**. The digits are typically $\{0,1\}$.
   1 \times (1.5^2) + 0 \times (1.5^1) + 1 \times (1.5^0) = 2.25 + 1 = 3.25
   $$
 
-Numbers don’t line up as neatly as in base-10, but the system is perfectly valid.
+Numbers don't line up as neatly as in base-10, but the system is perfectly valid.
 
 ## Irrational bases: base-π
 
-Nothing stops us from picking an irrational base, like $\pi$. Choosing a non-integer base doesn’t stop the positional system from working. It just makes the expansions of other numbers weird.
+Nothing stops us from picking an irrational base, like $\pi$. Choosing a non-integer base doesn't stop the positional system from working. It just makes the expansions of other numbers weird.
 
 Now, if you remember from earlier: Any number $b$ in base-$b$ is represented as `10`.
 
@@ -69,7 +69,7 @@ Now, if you remember from earlier: Any number $b$ in base-$b$ is represented as 
   1 \times \pi^1 + 0 \times \pi^0 = \pi
   $$
 
-So if you ever felt the need to express $\pi$ as a rational integer, here you go. It’s `10`. <small><sub>(in base-π).</sub></small>
+So if you ever felt the need to express $\pi$ as a rational integer, here you go. It's `10`. <small><sub>(in base-π).</sub></small>
 
 Of course, other numbers get strange expansions. For example, the number 2 in base-π would look like a fraction of `10`.
 
@@ -101,3 +101,15 @@ This system is tightly connected to the Fibonacci sequence, since powers of $\va
 ## Why does this matter? 
 
 I have no idea. I haven't slep today and just thought it's cool.
+
+
+## Btw
+
+Just like bases don't have to be integers, dimensions don't either. 0D (Point), 1D (Line), 2D (Plane), 3D (Cube), 4D (Tesseract) are cool and all...
+
+But we can also have [fractal dimensions](https://en.wikipedia.org/wiki/Fractal_dimension) like 1.26D ([Koch snowflake](https://en.wikipedia.org/wiki/Koch_snowflake)), 1.58D ([Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)), 2.7268D ([Menger sponge](https://en.wikipedia.org/wiki/Menger_sponge)) and so on.
+
+<small>(Ironically, the Hausdorff dimension of the self-similar recursive fractal of the [dragon curve](https://en.wikipedia.org/wiki/Dragon_curve) is exactly 2.)</small>
+
+Now, how a Hausdorff space of $\pi$D would look like, is left as an exercise to the reader. <br>
+<small>Hint: [It's possible](https://en.wikipedia.org/wiki/Iterated_function_system)</small>
