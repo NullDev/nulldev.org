@@ -11,11 +11,11 @@ Contrary to popular belief, NNs are not magic.
 
 ---
 
-# What is a neural network?
+## What is a neural network?
 
 A neural network (NN) is a computational model inspired by the human brain. It consists of layers of interconnected nodes (neurons) that process data. Each connection has a weight that adjusts as learning proceeds.
 
-# Why they are not a BlackBox
+## Why they are not a BlackBox
 
 There's a popular claim that *neural networks are a black box*.
 The reasoning usually goes like this:
@@ -25,7 +25,7 @@ The reasoning usually goes like this:
 I recently had this exact conversation with someone who insisted that neural networks cannot be explained algorithmically.
 But this view confuses *complexity* with *mystery*. Neural networks are **not** a black box. They are fully specified, deterministic algorithms. The only problem is that they're **too large** for humans to inspect weight by weight. Let's break this down.
 
-# A Neural Network *is* an Algorithm
+## A Neural Network *is* an Algorithm
 
 At its core, a feed-forward neural network is nothing more than a nested function:
 
@@ -64,7 +64,7 @@ $$
 Y = f(X) \;=\; \sum_i \text{Attribution}_i + \text{Bias}
 $$
 
-# But What About Generalization?
+## But What About Generalization?
 
 My discussion partner said:
 
@@ -75,7 +75,7 @@ That's exactly what autoencoders do: they reduce input to essential features, th
 
 For text models, we tokenize input into vectors, map them into high-dimensional space, and optimize a cost function so the network predicts tokens correctly. The “generalization” is just the side effect of minimizing loss.
 
-# Why It Feels Like a Black Box
+## Why It Feels Like a Black Box
 
 The *illusion* of a black box comes from **scale**. <br>
 But we could literally "hard-code" any neural network by hand if we wanted to. The concept always stays the same. It's just impractical for large networks. <br>
@@ -149,7 +149,7 @@ There is no *cat neuron*, but the composition of features encodes the concept.
 
 > The forest is the solution, not the individual tree.
 
-# The “Why These Weights?” Question
+## The “Why These Weights?” Question
 
 The final pushback I got was:
 
@@ -173,7 +173,7 @@ So the reason “why this weight” is literally:
 The weights are the solution to a constrained optimization problem. Emergent features aren't mysterious. They are the inevitable product of minimizing error under the given data. <br>
 This isn't just "something we do during fitting". This is the **entire purpose** of training.
 
-# Emergence Is Not Magic
+## Emergence Is Not Magic
 
 Emergence doesn't mean “we don't know.” or "we can't explain it".
 It means: *complex behaviors arise from simple rules at scale.*
@@ -195,7 +195,7 @@ Feature detections appear “emergent” because they are the result of cost min
 And as stated above, we even have tools and methods that can explain this emergence. Even visually. <br>
 SGD tells you exactly what happens and why. It's just not “human readable” on its own.
 
-# Conclusion
+## Conclusion
 
 Neural networks aren't mysterious or magical. They are deterministic, fully defined algorithms.
 What people really mean when they say *“black box”* is:
