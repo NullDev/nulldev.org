@@ -11,6 +11,15 @@ Contrary to popular belief, NNs are not magic.
 
 ---
 
+# Why neural networks are not mysterious black boxes
+
+This post was inspired by a conversation I had recently, where someone insisted that neural networks are inherently mysterious and cannot be explained algorithmically. <br>
+Ill try to tackle
+- Why neural networks are not black boxes
+- Why you could write a step by step algorithm for them
+- Why they "generalize" and what that means
+- Why emergence is not unexplainable
+
 ## What is a neural network?
 
 A neural network (NN) is a computational model inspired by the human brain. It consists of layers of interconnected nodes (neurons) that process data. Each connection has a weight that adjusts as learning proceeds.
