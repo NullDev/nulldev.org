@@ -95,8 +95,8 @@ This system is tightly connected to the Fibonacci sequence, since powers of $\va
 
 ## Other exotic bases
 
-* **Negabinary (base -2):** Every integer has a unique representation using only 0 and 1, without needing a minus sign.
-* **Complex base $i$:** The “quater-imaginary” system (base $2i$) can represent every complex integer with digits 0–3.
+* **Negabinary (base -2):** Every integer has a unique representation using only 0 and 1, without needing a minus sign. This works for any [negative base](https://en.wikipedia.org/wiki/Negative_base).
+* **Complex base $i$:** The ["quater-imaginary"](https://en.wikipedia.org/wiki/Quater-imaginary_base) system (base $2i$) can represent every complex integer with digits 0–3.
 
 ## Why does this matter? 
 

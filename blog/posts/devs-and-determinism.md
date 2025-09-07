@@ -116,7 +116,8 @@ Both can be true.
 I transcribed the "Quantum code" from the show:
 https://gist.github.com/NullDev/b6bf37cbdd7f41ad169211eb7594532e
 
-While it surprisingly incorporates some real concepts like shor, mersenne and dlog, it is... creative. 
+While it surprisingly incorporates some real concepts like shor, mersenne and dlog, it is... creative at best. <br>
+Snippet:
 
 ```python
 def qrun(qcircuit, n, hypo, epsilon):
