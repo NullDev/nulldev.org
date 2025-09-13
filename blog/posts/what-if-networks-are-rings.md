@@ -5,12 +5,12 @@ outline: deep
 tags:
 - math
 - networking
-- mudular arithmetic
-- rings
+- mudular-arithmetic
+- ring-theory
 - subnets
 - number-systems
 ---
-We can think differently about networks and subnets using modular arithmetic. Should we? Probably not.
+We can think differently about networks and subnets using modular arithmetic & ring theory. Should we? Probably not.
 
 ---
 

@@ -6,6 +6,8 @@ tags:
 - math
 - ai
 - llm
+- neural-networks
+- machine-learning
 ---
 Contrary to popular belief, NNs are not magic.
 
