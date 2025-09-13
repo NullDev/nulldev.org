@@ -10,13 +10,13 @@ tags:
 - subnets
 - number-systems
 ---
-We can think differently about networks and subnets using modular arithmetic.
+We can think differently about networks and subnets using modular arithmetic. Should we? Probably not.
 
 ---
 
 # What if networks are just rings?
 
-IP addresses look like boring dotted decimals: `192.168.1.1`, `10.0.0.42`, `8.8.8.8`. But under the hood, networking is pure binary. And binary means math.
+IP addresses look like boring dotted decimals: `192.168.1.1`, `10.0.0.42`, `8.8.8.8`. But under the hood, networking is pure binary. And binary means math. And math means we can do cursed stuff.
 
 In fact:
 
@@ -25,6 +25,8 @@ $$
 $$
 
 The space of IPv4 addresses is just the **commutative residue class ring of integers mod $2^{32}$**.
+
+**NOW**, is that useful? The answer might shock you... <small>(it's no)</small>
 
 ## IP addresses as a ring
 

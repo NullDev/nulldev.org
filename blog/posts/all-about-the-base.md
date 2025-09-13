@@ -7,7 +7,7 @@ tags:
 - number-systems
 - bases
 ---
-Weird and Wonderful Number Bases
+Weird Number Bases are weird. But also kinda cool. And kinda useless. But why stop at integer bases?
 
 ---
 
