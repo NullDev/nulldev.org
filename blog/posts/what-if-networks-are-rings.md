@@ -8,6 +8,7 @@ tags:
 - mudular arithmetic
 - rings
 - subnets
+- number-systems
 ---
 We can think differently about networks and subnets using modular arithmetic.
 
