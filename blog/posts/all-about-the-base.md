@@ -13,7 +13,7 @@ Weird and Wonderful Number Bases
 
 # Number systems are weird
 
-When we think of number systems, we usually imagine the familiar **base-10** (decimal) or **base-2** (binary). But the idea of a “base” is much more flexible than most people realize. We aren't restricted to integers ≥ 2. In fact, we can use **fractional bases, irrational bases, and even negative or complex ones**.
+When we think of number systems, we usually imagine the familiar **base-10** (decimal) or **base-2** (binary). But the idea of a "base" is much more flexible than most people realize. We aren't restricted to integers ≥ 2. In fact, we can use **fractional bases, irrational bases, and even negative or complex ones**.
 
 Now, just because we _could_, does that mean we _should_?
 

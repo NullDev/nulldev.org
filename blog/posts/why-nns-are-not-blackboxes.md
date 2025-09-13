@@ -29,7 +29,7 @@ A neural network (NN) is a computational model inspired by the human brain. It c
 There's a popular claim that *neural networks are a black box*.
 The reasoning usually goes like this:
 
-> “We don't know the algorithm they use. We just throw data at them, and somehow they magically generalize. Therefore, it's a black box.”
+> "We don't know the algorithm they use. We just throw data at them, and somehow they magically generalize. Therefore, it's a black box."
 
 I recently had this exact conversation with someone who insisted that neural networks cannot be explained algorithmically.
 But this view confuses *complexity* with *mystery*. Neural networks are **not** a black box. They are fully specified, deterministic algorithms. The only problem is that they're **too large** for humans to inspect weight by weight. Let's break this down.
@@ -54,9 +54,9 @@ Every single output can be explained step by step:
 3. Apply activation.
 4. Pass to the next layer.
 
-If you follow the SGD and you actually "read" what the NN is doing, you can read out data points like $x_i, f(x_i)$ and "pull out" functions using [symbolic regression](https://en.wikipedia.org/wiki/Symbolic_regression) and can thus algorithmically approximate what the NN is doing.
+If you follow the [Stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) and you actually "read" what the NN is doing, you can read out data points like $x_i, f(x_i)$ and "pull out" functions using [symbolic regression](https://en.wikipedia.org/wiki/Symbolic_regression) and can thus algorithmically approximate what the NN is doing.
 
-That's it. The **systematic rules are 100% known**. Neural networks are not “mystical black boxes,” they are just *very large, nonlinear functions*. Millions of parameters don't make it any less of a function.
+That's it. The **systematic rules are 100% known**. Neural networks are not "mystical black boxes," they are just *very large, nonlinear functions*. Millions of parameters don't make it any less of a function.
 
 We can even go as far as explaining for _each_ new input X, why the network outputs Y.
 You can calculate
@@ -77,12 +77,12 @@ $$
 
 My discussion partner said:
 
-> “Show me the pseudocode for generalizing text. We don't know how they do it!”
+> "Show me the pseudocode for generalizing text. We don't know how they do it!"
 
-Actually, we do. Neural networks *don't* “learn to generalize” in some human-like way. Instead, they **compress patterns** in the training data so they can be reused on unseen data.
+Actually, we do. Neural networks *don't* "learn to generalize" in some human-like way. Instead, they **compress patterns** in the training data so they can be reused on unseen data.
 That's exactly what autoencoders do: they reduce input to essential features, then reconstruct it.
 
-For text models, we tokenize input into vectors, map them into high-dimensional space, and optimize a cost function so the network predicts tokens correctly. The “generalization” is just the side effect of minimizing loss.
+For text models, we tokenize input into vectors, map them into high-dimensional space, and optimize a cost function so the network predicts tokens correctly. The "generalization" is just the side effect of minimizing loss.
 
 ## Why It Feels Like a Black Box
 
@@ -146,23 +146,23 @@ But in theory, you could write out the entire function as a massive nested expre
 
 # Interpreting Neural Networks
 
-We already have methods to “open the box”:
+We already have methods to "open the box":
 
 * **[Saliency maps](https://en.wikipedia.org/wiki/Saliency_map)** → show which pixels contributed most to a classification.
 * **[Grad-CAM](https://github.com/jacobgil/pytorch-grad-cam)** → highlights image regions that drove a decision.
-* **[TCAV](https://github.com/tensorflow/tcav) (Testing with Concept Activation Vectors)** → measures sensitivity to abstract concepts like “stripedness” or “roundness.”
+* **[TCAV](https://github.com/tensorflow/tcav) (Testing with Concept Activation Vectors)** → measures sensitivity to abstract concepts like "stripedness" or "roundness."
 * **[Feature visualization](https://research.google/pubs/feature-visualization/)** → shows what individual neurons or layers respond to (edges, textures, shapes, objects).
 
-So if a cat image triggers a network, we can literally see that early layers detect whiskers and edges, middle layers detect shapes, and higher layers assemble the concept “cat.”
+So if a cat image triggers a network, we can literally see that early layers detect whiskers and edges, middle layers detect shapes, and higher layers assemble the concept "cat."
 There is no *cat neuron*, but the composition of features encodes the concept.
 
 > The forest is the solution, not the individual tree.
 
-## The “Why These Weights?” Question
+## The "Why These Weights?" Question
 
 The final pushback I got was:
 
-> “But WHY these exact weights? That's unexplained. Therefore: black box.”
+> "But WHY these exact weights? That's unexplained. Therefore: black box."
 
 Actually, the *why* is simple:
 
@@ -176,7 +176,7 @@ $$
 
 * And we then use backpropagation to compute gradients efficiently.
 
-So the reason “why this weight” is literally:
+So the reason "why this weight" is literally:
 **because it reduces the loss better than other weights.**
 
 The weights are the solution to a constrained optimization problem. Emergent features aren't mysterious. They are the inevitable product of minimizing error under the given data. <br>
@@ -184,7 +184,7 @@ This isn't just "something we do during fitting". This is the **entire purpose**
 
 ## Emergence Is Not Magic
 
-Emergence doesn't mean “we don't know.” or "we can't explain it".
+Emergence doesn't mean "we don't know." or "we can't explain it".
 It means: *complex behaviors arise from simple rules at scale.*
 Like how water molecules give rise to waves, or how minimizing loss gives rise to feature detectors.
 
@@ -199,18 +199,18 @@ That's not a black box. That's just **a box too big to hold in your head without
 Knowing these properties is the literal basis of optimizations such as pruning, quantization, and distillation. <br>
 That's also why we have a whole field of **explainable AI**.
 
-Feature detections appear “emergent” because they are the result of cost minimization. If you have cat detection but never explicitly tell the NN to look for whiskers and ears, but it happens anyway because you minimize the cost function for exactly that, it doesn't come out of nowhere. If I tell you to continue the number sequence 2, 4, 6, 8, and tell you that 1, 3, 5, 7 are wrong, chances are high that you will figure out on your own that the next number must be 10, just because of the constraints of the examples. Or if I want you to draw a triangle with a = 3, b = 5, then there is only one possibility for c. You could call that "property-bound emergence".
+Feature detections appear "emergent" because they are the result of cost minimization. If you have cat detection but never explicitly tell the NN to look for whiskers and ears, but it happens anyway because you minimize the cost function for exactly that, it doesn't come out of nowhere. If I tell you to continue the number sequence 2, 4, 6, 8, and tell you that 1, 3, 5, 7 are wrong, chances are high that you will figure out on your own that the next number must be 10, just because of the constraints of the examples. Or if I want you to draw a triangle with a = 3, b = 5, then there is only one possibility for c. You could call that "property-bound emergence".
 
 And as stated above, we even have tools and methods that can explain this emergence. Even visually. <br>
-SGD tells you exactly what happens and why. It's just not “human readable” on its own.
+SGD tells you exactly what happens and why. It's just not "human readable" on its own.
 
 ## Conclusion
 
 Neural networks aren't mysterious or magical. They are deterministic, fully defined algorithms.
-What people really mean when they say *“black box”* is:
+What people really mean when they say *"black box"* is:
 
-* *“It's too complex for me to explain without tools.”*
-* *“The solution space is too large for human intuition.”*
+* *"It's too complex for me to explain without tools."*
+* *"The solution space is too large for human intuition."*
 
 But complexity ≠ unknowability.
 Every step can be computed, explained, and even visualized.
