@@ -137,7 +137,7 @@ for x in inputs:
 
 * Or, we can even have a complete Neural Network, self-contained in a single SVG, fully deterministic[^1]:
 
-<iframe src="https://v1.cx/ann/" width="640" height="480" style="border:none;"></iframe>
+<iframe src="https://v1.cx/ann/?cache=blog" width="640" height="480" style="border:none;"></iframe>
 
 <small style="text-align: center; display: block;">Click on individual neurons to see their path.<br>
 Neurons in the first hidden layer will also show their interpretation of the image.</small>
