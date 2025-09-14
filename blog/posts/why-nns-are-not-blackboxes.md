@@ -139,7 +139,7 @@ for x in inputs:
 
 <iframe src="https://v1.cx/ann/" width="640" height="480" style="border:none;"></iframe>
 
-<small>credits to [3blue1brown](https://www.3blue1brown.com/)</small>
+<small style="text-align: center; display: block;">base code by [3blue1brown](https://github.com/3b1b/3Blue1Brown.com/blob/d8aa6607e7c08b12ea20f1afcff1c6603e10763d/public/content/lessons/2017/neural-networks/neural-network-interactive/index.js) - [open demo in new tab](https://v1.cx/ann/)</small>
 
 * But ImageNet-scale networks have millions of parameters. No human will read through that by hand.
 

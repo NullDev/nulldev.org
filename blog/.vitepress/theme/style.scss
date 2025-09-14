@@ -429,8 +429,10 @@ hr {
 
 .nav-link:hover {
   color: var(--vp-c-text-1);
-  border-color: var(--vp-c-divider);
-  background: rgba(99,176,107,.05);
+}
+
+iframe {
+  max-width: 100%;
 }
 
 /*************************
