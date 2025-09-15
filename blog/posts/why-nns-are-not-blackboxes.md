@@ -223,7 +223,10 @@ $$
 
 There is nothing "random" about this. The same $x$ and weights always produce the same $p(y \mid x)$.
 
-The real contrast is **deterministic vs stochastic**. Stochastic means that randomness is explicitly introduced (e.g. Monte Carlo methods, dropout during training, or random sampling at inference). <br>
+Even a "probabilistic algorithm" can be fully deterministic. For example, a Naive Bayes classifier always computes the same probability distribution given the same data. The probabilistic part refers to the representation of uncertainty, not to actual randomness.
+
+The real contrast is **deterministic vs stochastic**. <br>
+Stochastic means that randomness is explicitly introduced (e.g. [Monte Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method), dropout during training, or random sampling at inference). <br>
 But chance (probability) is not the same as randomness (stochasticity).
 
 Large language models (LLMs) are a perfect case:
