@@ -208,6 +208,33 @@ Feature detections appear "emergent" because they are the result of cost minimiz
 And as stated above, we even have tools and methods that can explain this emergence. Even visually. <br>
 SGD tells you exactly what happens and why. It's just not "human readable" on its own.
 
+### Deterministic and Probabilistic are not mutually exclusive
+
+Another common misconception is that *deterministic* and *probabilistic* are opposites. They're not. They can, in fact, be complementary.
+
+* **Deterministic** means that given the same input and the same state, the algorithm will always produce the same output.
+* **Probabilistic** means the output is expressed in terms of probabilities or likelihoods of outcomes.
+
+A neural network can be both: it deterministically computes a probability distribution. For example, a softmax layer is a fixed function:
+
+$$
+p(y \mid x) = \frac{e^{z_y}}{\sum_j e^{z_j}}
+$$
+
+There is nothing "random" about this. The same $x$ and weights always produce the same $p(y \mid x)$.
+
+The real contrast is **deterministic vs stochastic**. Stochastic means that randomness is explicitly introduced (e.g. Monte Carlo methods, dropout during training, or random sampling at inference). <br>
+But chance (probability) is not the same as randomness (stochasticity).
+
+Large language models (LLMs) are a perfect case:
+
+* If you run them with temperature = 0 and fixed seeds, they're entirely deterministic.
+* If you increase temperature or use nucleus/top-k sampling, you inject stochasticity, and now the model's output can vary.
+
+So when we say "AI is probabilistic," what we really mean is: *AI deterministically computes probability distributions, and we may or may not sample from them stochastically.*
+
+<small>Shamless self-plug: If you want to read more about determinism, [go here](https://nulldev.org/blog/posts/devs-and-determinism).</small>
+
 ## Conclusion
 
 Neural networks aren't mysterious or magical. They are deterministic, fully defined algorithms.
