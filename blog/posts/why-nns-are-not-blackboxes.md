@@ -236,7 +236,7 @@ Large language models (LLMs) are a perfect case:
 
 So when we say "AI is probabilistic," what we really mean is: *AI deterministically computes probability distributions, and we may or may not sample from them stochastically.*
 
-<small>Shamless self-plug: If you want to read more about determinism, [go here](https://nulldev.org/blog/posts/devs-and-determinism).</small>
+<small>Shamless self-plug: If you want to read more about determinism in a philosophical way, [go here](https://nulldev.org/blog/posts/devs-and-determinism).</small>
 
 ## Conclusion
 
