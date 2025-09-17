@@ -135,6 +135,8 @@ for x in inputs:
  1   1   0.00005    0
  ```
 
+<small>Fun fact: In $\mathbb{F}_{2^n}, n \in \mathbb{N}_{+}$ - addition is exactly just XOR.</small>
+
 * Or, we can even have a complete Neural Network, self-contained in a single SVG, fully deterministic[^1]:
 
 <iframe src="https://v1.cx/ann/?cache=blog" width="640" height="480" style="border:none;"></iframe>
