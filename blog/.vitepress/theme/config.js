@@ -30,7 +30,7 @@ const themeConfig = {
         message: `© NullDev ${new Date().getFullYear()}`,
     },
     // custom theme config
-    postsPerPage: 5,
+    postsPerPage: 10,
     giscus: {
         repo: "NullDev/nulldev.org",
         repoId: "R_kgDOK2aEog",
