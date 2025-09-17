@@ -195,6 +195,9 @@ onMounted(() => {
   console.log("Math facts script mounted.")
   const allFacts = getAllfacts();
   setRandomFact(allFacts);
-  document.getElementById("another-one")?.addEventListener("click", () => setRandomFact(allFacts));
+  document.getElementById("another-one")?.addEventListener("click", e => {
+    e.preventDefault();
+    setRandomFact(allFacts);
+  });
 });
 </script>
