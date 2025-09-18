@@ -16,7 +16,7 @@ Super useless math facts you probably didn't know or don't care to know. Because
 :::
 
 <div style="text-align: center; display: block;">
-<a href="#" id="another-one" class="tag-link"><span class="theme-badge">Gimme Another One ↻</span></a>
+<a href="javascript:void(0)" role="button" id="another-one" class="tag-link"><span class="theme-badge">Gimme Another One ↻</span></a>
 </div>
 
 ---
@@ -181,8 +181,8 @@ Super useless math facts you probably didn't know or don't care to know. Because
 import { onMounted } from "vue";
 
 const getAllfacts = () => {
-  const allFacts = document.querySelectorAll("details.details > ul > li")
-  return Array.from(allFacts).map(li => li.textContent)
+  const allFacts = document.querySelectorAll("details.details > ul > li");
+  return Array.from(allFacts).map(li => li.textContent);
 };
 
 const setRandomFact = (allFacts) => {
@@ -192,11 +192,11 @@ const setRandomFact = (allFacts) => {
 };
 
 onMounted(() => {
-  console.log("Math facts script mounted.")
   const allFacts = getAllfacts();
   setRandomFact(allFacts);
   document.getElementById("another-one")?.addEventListener("click", e => {
     e.preventDefault();
+    e.stopPropagation();
     setRandomFact(allFacts);
   });
 });
