@@ -135,22 +135,34 @@ for x in inputs:
  1   1   0.00005    0
  ```
 
-<div style="text-align: center; display: block;">Fun fact: In $\mathbb{F}_{2^n}, n \in \mathbb{N}_{+}$ addition is exactly just XOR.</div>
+<div class="nl--center">
 
-* Or, we can even have a complete Neural Network, self-contained in a single SVG, fully deterministic[^1]:
+Fun fact: In $\mathbb{F}_{2^n}, n \in \mathbb{N}_{+}$ addition is exactly just XOR.
 
-<iframe src="https://v1.cx/ann/?cache=blog" width="640" height="480" style="border:none;"></iframe>
+</div>
 
-<small style="text-align: center; display: block;">Click on individual neurons to see their path.<br>
+* Or, we can even have a complete Neural Network, self-contained in a single SVG, fully deterministic:
+
+<iframe src="https://v1.cx/ann/?cache=blog" width="640" height="480"></iframe>
+
+<small class="nl--center">Click on individual neurons to see their path.<br>
 Neurons in the first hidden layer will also show their interpretation of the image.</small>
-<small style="text-align: center; display: block;">Base code by [3blue1brown](https://github.com/3b1b/3Blue1Brown.com/blob/d8aa6607e7c08b12ea20f1afcff1c6603e10763d/public/content/lessons/2017/neural-networks/neural-network-interactive/index.js) - [open demo in new tab](https://v1.cx/ann/)</small>
+<small class="nl--center">Base code by [3blue1brown](https://github.com/3b1b/3Blue1Brown.com/blob/d8aa6607e7c08b12ea20f1afcff1c6603e10763d/public/content/lessons/2017/neural-networks/neural-network-interactive/index.js) - [open demo in new tab](https://v1.cx/ann/)</small>
 
-* But ImageNet-scale networks have millions of parameters. No human will read through that by hand.
+::: danger HOWEVER
+Even if it weren't deterministic, non-deterministic $\neq$ non-algorithmic. <br>
+So this even applies to stochastic algorithms like MCMC or genetic algorithms.
+:::
 
-That doesn't mean they are unknowable. It means **the function is too complex to be described in plain English** without tools. <br>
+You could literally write out the entire function as a massive nested expression. It would be ugly, but it would be **exactly** what the network computes. 
+
+> But ImageNet-scale networks have millions of parameters. No human will read through that by hand.
+
+That doesn't mean they are unknowable. It means **the function is too complex to be described in plain English** without tools.
+
 But in theory, you could write out the entire function as a massive nested expression. It would be ugly, but it would be **exactly** what the network computes.
 
-# Interpreting Neural Networks
+## Interpreting Neural Networks
 
 We already have methods to "open the box":
 
@@ -203,11 +215,17 @@ The network *is* the algorithm. You can:
 
 That's not a black box. That's just **a box too big to hold in your head without tools.** <br>
 Knowing these properties is the literal basis of optimizations such as pruning, quantization, and distillation. <br>
-That's also why we have a whole field of **explainable AI**.
 
-Feature detections appear "emergent" because they are the result of cost minimization. If you have cat detection but never explicitly tell the NN to look for whiskers and ears, but it happens anyway because you minimize the cost function for exactly that, it doesn't come out of nowhere. If I tell you to continue the number sequence 2, 4, 6, 8, and tell you that 1, 3, 5, 7 are wrong, chances are high that you will figure out on your own that the next number must be 10, just because of the constraints of the examples. Or if I want you to draw a triangle with a = 3, b = 5, then there is only one possibility for c. You could call that "property-bound emergence".
+::: warning And...
+That's also why we have a whole field of [**explainable AI (XAI)**](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence).
+:::
 
-And as stated above, we even have tools and methods that can explain this emergence. Even visually. <br>
+Feature detections appear "emergent" because they are the result of cost minimization. If you have cat detection but never explicitly tell the NN to look for whiskers and ears, but it happens anyway because you minimize the cost function for exactly that, it doesn't come out of nowhere.
+
+If I tell you to continue the number sequence 2, 4, 6, 8, and tell you that 1, 3, 5, 7 are wrong, chances are high that you will figure out on your own that the next number must be 10, just because of the constraints of the examples. Or if I want you to draw a triangle with a = 3, b = 5, then there is only one possibility for c. You could call that "property-bound emergence".
+
+And as stated above, we even have tools and methods that can explain this emergence. Even visually.
+
 SGD tells you exactly what happens and why. It's just not "human readable" on its own.
 
 ### Deterministic and Probabilistic are not mutually exclusive
@@ -238,7 +256,9 @@ Large language models (LLMs) are a perfect case:
 
 So when we say "AI is probabilistic," what we really mean is: *AI deterministically computes probability distributions, and we may or may not sample from them stochastically.*
 
-<small>Shamless self-plug: If you want to read more about determinism in a philosophical way, [go here](https://nulldev.org/blog/posts/devs-and-determinism).</small>
+::: tip Also...
+Shamless self-plug: If you want to read more about determinism in a philosophical way, [go here](https://nulldev.org/blog/posts/devs-and-determinism).
+:::
 
 ## Conclusion
 
@@ -251,6 +271,4 @@ What people really mean when they say *"black box"* is:
 But complexity ≠ unknowability.
 Every step can be computed, explained, and even visualized.
 
-The box is transparent-just very, very large.
-
-[^1]: Even if it wasn't though, non-deterministic $\neq$ non-algorithmic.
+The box is transparent. Just very, very large.

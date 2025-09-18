@@ -32,7 +32,10 @@ My interpretation is this:
 
 If those criteria are met, the system is **deterministic to that observer**. Determinism is **epistemic**, meaning it relates to what is knowable from the outside. Not inherent to the system itself.
 
-Hence the name: **Epistemic Laplacian Determinism**. Like [Laplace's demon](https://en.wikipedia.org/wiki/Laplace%27s_demon), but with an emphasis on observer perspective and knowledge access.
+::: tip Hence the name
+**Epistemic Laplacian Determinism**. <br>
+Like [Laplace's demon](https://en.wikipedia.org/wiki/Laplace%27s_demon), but with an emphasis on observer perspective and knowledge access.
+:::
 
 ## The Light Switch and the Stranger
 
@@ -63,7 +66,9 @@ Even PRNGs (pseudorandom number generators) are deterministic if you know the se
 
 This brings us to quantum mechanics. Does it prove determinism wrong?
 
-Surprisingly: **I don't think so**.
+::: warning Surprisingly...
+**I don't think so**.
+:::
 
 Quantum theory **appears** probabilistic, but this depends on interpretation:
 

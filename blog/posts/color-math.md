@@ -45,7 +45,9 @@ $\textcolor{Magenta}{\text{consolidate the reorderings within the group}}$.
 
 ## Sines
 
+::: tip Note
 Sine is a fundamental wave function, appearing in geometry, calculus, physics, and signal processing.
+:::
 
 ### Sine (Unit Circle)
 

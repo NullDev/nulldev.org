@@ -26,7 +26,10 @@ $$
 
 The space of IPv4 addresses is just the **commutative residue class ring of integers mod $2^{32}$**.
 
-**NOW**, is that useful? The answer might shock you... <small>(it's no)</small>
+::: warning NOW, is that useful?
+The answer might shock you... <br>
+<small>(it's "no")</small>
+:::
 
 ## IP addresses as a ring
 
@@ -52,7 +55,9 @@ That is: a **coset** of the ideal $(2^{32-n}) \subseteq \mathbb{Z}/2^{32}\mathbb
 * `/16` → cosets mod $2^{16}$ = groups of 65,536.
 * `/32` → cosets mod $2^{0}=1$ = just one address.
 
-So every subnet is just **congruence classes** in the ring.
+::: tip So...
+Every subnet is just **congruence classes** in the ring.
+:::
 
 ## Notation
 
@@ -164,7 +169,9 @@ So:
 * **In algebra**: ideals $(2^k)$ form a descending chain.
 * **In networking**: subnets `/k` form a descending chain of refinements.
 
+::: tip Well
 That's not just an analogy. It's literally the same lattice structure.
+:::
 
 ## TL;DR: In other words
 

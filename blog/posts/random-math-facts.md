@@ -15,7 +15,7 @@ Super useless math facts you probably didn't know or don't care to know. Because
 <div id="fact" style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px 0; font-weight: bold; min-height: 92px;">-</div>
 :::
 
-<div style="text-align: center; display: block;">
+<div class="nl--center">
 <a href="javascript:void(0)" role="button" id="another-one" class="tag-link"><span class="theme-badge">Gimme Another One ↻</span></a>
 </div>
 
