@@ -137,6 +137,14 @@ hr {
   margin-top: 20px;
 }
 
+@media (min-width: 768px) {
+  .post-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .post-card {
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
