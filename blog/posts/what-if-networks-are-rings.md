@@ -1,5 +1,5 @@
 ---
-date: 2025-09-13
+date: 2025-08-20
 title: What if Networks are Rings?
 outline: deep
 tags:
