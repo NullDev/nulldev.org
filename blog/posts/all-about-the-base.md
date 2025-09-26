@@ -91,7 +91,7 @@ So if you ever felt the need to express $\pi$ as a rational integer, here you go
 
 Of course, other numbers get strange expansions. 
 
-But this system can br used to more easily show the relationship between the diameter of a circle to its circumference, which corresponds to its perimeter. 
+But this system can be used to more easily show the relationship between the diameter of a circle to its circumference, which corresponds to its perimeter. 
 
 Since circumference = π × diameter, a circle with diameter $1_\pi$ has circumference $10_\pi$. A circle with diameter $10_\pi$ has circumference $100_\pi$, and so on.
 
@@ -132,7 +132,7 @@ The base can also be used to show the relationship between the side of a square 
 
 Another use of the base is to show the [silver ratio](https://en.wikipedia.org/wiki/Silver_ratio) as its representation in base $\sqrt{2}$ is simply $11_\sqrt{2}$. 
 
-In addition, the area of a regular octagon with side length $1_\sqrt{2}$ is $1100_\sqrt{2}$, the area of a [regular octagon](https://en.wikipedia.org/wiki/Octagon#Regular_octagon) with side length $10_\sqrt{2}$ is $110000_\sqrt{2}$, the area of a regular octagon with side length $100_\sqrt{2}$ is $11000000_\sqrt{2}$, etc...
+In addition, the area of a [regular octagon](https://en.wikipedia.org/wiki/Octagon#Regular_octagon) with side length $1_\sqrt{2}$ is $1100_\sqrt{2}$, the area of a regular octagonwith side length $10_\sqrt{2}$ is $110000_\sqrt{2}$, the area of a regular octagon with side length $100_\sqrt{2}$ is $11000000_\sqrt{2}$, etc...
 
 ---
 
