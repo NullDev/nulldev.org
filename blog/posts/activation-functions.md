@@ -79,7 +79,12 @@ During backpropagation, gradients are calculated via [Stochastic gradient descen
 
 - **It:** Outputs the input directly if positive; otherwise, it outputs zero.
 - **Formula:** $\text{ReLU}(x) = \max(0, x)$.
-- **Derivative:** $\text{ReLU}'(x) = \begin{cases} 1 & x > 0 \\ 0 & x \leq 0 \end{cases}$
+- **Derivative:**
+
+$$
+\text{ReLU}'(x) = \begin{cases} 1 & x > 0 \\ 0 & x \leq 0 \end{cases}
+$$
+
 - **Good for:** Most hidden layers in deep networks (efficient and effective).
 - **Used for:** Image recognition, NLP tasks.
 - **Bad for:** Can lead to "dying ReLUs" where neurons output zero for all inputs.
@@ -93,8 +98,18 @@ During backpropagation, gradients are calculated via [Stochastic gradient descen
 ### Leaky ReLU
 
 - **It:** Similar to ReLU but gives a small negative slope for negative inputs.
-- **Formula:** $\text{Leaky ReLU}(x) = \max(0.01x, x)$.
-- **Derivative:** $\text{Leaky ReLU}'(x) = \begin{cases} 1 & x > 0 \\ 0.01 & x \leq 0 \end{cases}$
+- **Formula:**
+
+$$
+\text{Leaky ReLU}(x) = \max(0.01x, x)
+$$
+
+- **Derivative:** 
+
+$$
+\text{Leaky ReLU}'(x) = \begin{cases} 1 & x > 0 \\ 0.01 & x \leq 0 \end{cases}
+$$
+
 - **Good for:** Preventing dying ReLUs.
 - **Used for:** Fraud detection, anomaly detection.
 - **Bad for:** Still not perfect. Can be less interpretable.
@@ -109,7 +124,12 @@ During backpropagation, gradients are calculated via [Stochastic gradient descen
 
 - **It:** An extension of Leaky ReLU where the slope for negative inputs is learned during training.
 - **Formula:** $\text{PReLU}(x) = \max(\alpha x, x)$ where $\alpha$ is a learned parameter.
-- **Derivative:** $\text{PReLU}'(x) = \begin{cases} 1 & x > 0 \\ \alpha & x \leq 0 \end{cases}$
+- **Derivative:** 
+
+$$
+\text{PReLU}'(x) = \begin{cases} 1 & x > 0 \\ \alpha & x \leq 0 \end{cases}
+$$
+
   - **Note:** $\alpha$ can be learned **per neuron** or **shared per layer**, depending on the implementation.
 - **Good for:** Allowing the model to adaptively learn the best activation.
 - **Used for:** Image recognition, deep networks.
@@ -141,7 +161,12 @@ During backpropagation, gradients are calculated via [Stochastic gradient descen
 
 - **It:** Converts a vector of values into probabilities that sum to 1.
 - **Formula:** $\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}$.
-- **Derivative:** $\frac{\partial \text{Softmax}(x)_i}{\partial x_j} = \text{Softmax}(x)_i(\delta_{ij} - \text{Softmax}(x)_j)$.
+- **Derivative:** 
+
+$$
+\frac{\partial \text{Softmax}(x)_i}{\partial x_j} = \text{Softmax}(x)_i(\delta_{ij} - \text{Softmax}(x)_j)
+$$
+
   - **Note:** Involves the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 - **Good for:** Multi-class classification tasks.
 - **Used for:** Image classification, language modeling.
