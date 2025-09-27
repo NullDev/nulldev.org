@@ -1,6 +1,6 @@
 ---
 date: 2025-09-26
-title: Activation Functions Demystified
+title: Activation Functions
 outline: deep
 tags:
 - math
@@ -20,7 +20,7 @@ In the context of neural networks, an [**activation function**](https://en.wikip
 
 If you stacked multiple **linear layers** without any non-linear activations, the entire network would still collapse into a **single linear transformation**. In other words, no matter how many layers you add, the network could only ever represent straight decision boundaries.
 
-Activation functions introduce **non-linearities** between layers, which let networks approximate arbitrarily complex functions. This is what makes deep learning powerful: with enough non-linearities and data, neural nets can model intricate decision surfaces like speech, images, or language.
+Activation functions introduce **non-linearities** between layers, which let networks approximate arbitrarily complex functions. That's the concept of [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning). With enough non-linearities and data, neural nets can model intricate decision surfaces like speech, images, or language.
 
 A simple example:  
 - A network with no activations can only model a line.  
@@ -30,6 +30,18 @@ A simple example:
 ## Common Activation Functions
 
 Each activation has its own properties, advantages, and drawbacks. Below is a list of the most commonly used functions.
+
+::: tip Hint:
+You can hover over the plots to see the derivative at that point.
+:::
+
+**Why is the derivative important here?**
+
+The derivative of the activation function is actually crucial for the [backpropagation algorithm](https://en.wikipedia.org/wiki/Backpropagation), which is used to train neural networks.
+
+During backpropagation, gradients are calculated via [Stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to update the weights of the network. The derivative of the activation function determines how much influence a neuron's output has on the [loss function](https://en.wikipedia.org/wiki/Loss_function).
+
+<small>Shamless self-plug: I talk about that more [here](https://nulldev.org/blog/posts/why-nns-are-not-blackboxes)</small>.
 
 ---
 
@@ -55,7 +67,7 @@ Each activation has its own properties, advantages, and drawbacks. Below is a li
 - **Derivative:** $\tanh'(x) = 1 - \tanh^2(x)$.
 - **Good for:** Centering data around zero.
 - **Used for:** Sentiment analysis, time series prediction.
-- **Bad for:** Deep networks (can also cause vanishing gradients).
+- **Bad for:** Deep networks (can also cause [vanishing gradients](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)).
 - **Range:** $(-1, 1)$
 - **Order of continuity:** $C^\infty$
 
@@ -113,7 +125,8 @@ Each activation has its own properties, advantages, and drawbacks. Below is a li
 
 - **It:** Combines properties of ReLU and sigmoid, providing smooth activation.
 - **Formula:** $\text{GELU}(x) = x \cdot \Phi(x)$ where $\Phi(x)$ is the standard normal [cumulative distribution function (CDF)](https://en.wikipedia.org/wiki/Cumulative_distribution_function).
-- **Derivative:** Complex; involves both $\Phi(x)$ and the PDF $\phi(x)$. Commonly computed automatically by frameworks.
+- **Derivative:** Complex, involves both $\Phi(x)$ and the PDF $\phi(x)$.
+  - **Note:** Commonly computed automatically by frameworks.
 - **Good for:** Deep learning models, especially transformers.
 - **Used for:** NLP tasks, image recognition.
 - **Bad for:** More complex to compute than ReLU (though efficient in modern libraries).
@@ -128,7 +141,8 @@ Each activation has its own properties, advantages, and drawbacks. Below is a li
 
 - **It:** Converts a vector of values into probabilities that sum to 1.
 - **Formula:** $\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}$.
-- **Derivative:** Involves the Jacobian matrix; $\frac{\partial \text{Softmax}(x)_i}{\partial x_j} = \text{Softmax}(x)_i(\delta_{ij} - \text{Softmax}(x)_j)$.
+- **Derivative:** $\frac{\partial \text{Softmax}(x)_i}{\partial x_j} = \text{Softmax}(x)_i(\delta_{ij} - \text{Softmax}(x)_j)$.
+  - **Note:** Involves the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 - **Good for:** Multi-class classification tasks.
 - **Used for:** Image classification, language modeling.
 - **Bad for:** Not suitable for regression tasks.
@@ -147,7 +161,8 @@ Each activation has its own properties, advantages, and drawbacks. Below is a li
 
 - **It:** A smooth approximation of ReLU.
 - **Formula:** $\text{Softplus}(x) = \ln(1 + e^x)$.
-- **Derivative:** $\text{Softplus}'(x) = \sigma(x)$ (the sigmoid function).
+- **Derivative:** $\text{Softplus}'(x) = \sigma(x)$.
+  - **Note:** The derivative is the sigmoid function.
 - **Good for:** Situations where a smooth function is preferred.
 - **Used for:** Regression tasks, probabilistic models.
 - **Bad for:** Can be slower to compute than ReLU.
@@ -209,6 +224,7 @@ Modern frameworks optimize GELU, Swish, and Softplus well, so their extra comput
 ## Common Pitfalls
 
 - **Vanishing gradients:** Sigmoid and tanh squish inputs into small ranges, which can make gradients vanish in deep networks.
+  - See [Vanishing gradient problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)
 - **Dying ReLUs:** Large learning rates can push neurons permanently into the negative regime, making them output 0 forever.
 - **Exploding outputs:** Stacking linear activations or using softmax incorrectly can lead to numerical instability.
 - **Misusing softmax:** Applying softmax to regression outputs or applying it twice can distort predictions.
@@ -220,11 +236,13 @@ Modern frameworks optimize GELU, Swish, and Softplus well, so their extra comput
 import { onMounted } from "vue";
 import functionPlot from "function-plot";
 
-onMounted(() => {
+const draw = function(){
+    const contentsBounds = document.querySelector("div.content-container").getBoundingClientRect();
+    const ratio = (contentsBounds.width - 50) / 600;
     const opts = (target, fn, derivativeFn, xDomain, yDomain, title) => ({
         target,
-        width: 400,
-        height: 300,
+        width: 600 * ratio,
+        height: 400 * ratio,
         grid: true,
         data: [
             {
@@ -372,5 +390,10 @@ onMounted(() => {
             "Gaussian Function (Standard Normal)"
         )
     );
+};
+
+onMounted(() => {
+    draw();
+    window.addEventListener("resize", draw);
 });
 </script>
