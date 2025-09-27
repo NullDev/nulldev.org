@@ -89,11 +89,11 @@ hr {
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
-}
 
-.btn:hover, .VPButton:hover, .button:hover {
-  background: var(--vp-c-brand);
-  color: #0f0f0f;
+  &:hover {
+    background: var(--vp-c-brand);
+    color: #0f0f0f;
+  }
 }
 
 .theme-readmore {
@@ -107,12 +107,12 @@ hr {
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
-}
 
-.theme-readmore:hover {
-  background: transparent;
-  color: var(--vp-c-brand) !important;
-  border-color: var(--vp-c-brand);
+  &:hover {
+    background: transparent;
+    color: var(--vp-c-brand) !important;
+    border-color: var(--vp-c-brand);
+  }
 }
 
 /*************************
@@ -121,10 +121,10 @@ hr {
 .VPDoc a, .VPHome a, .VPPage a { 
   color: var(--vp-c-brand); 
   text-decoration: none; 
-}
 
-.VPDoc a:hover, .VPHome a:hover, .VPPage a:hover { 
-  color: var(--vp-c-text-1); 
+  &:hover { 
+    color: var(--vp-c-text-1); 
+  }
 }
 
 /*************************
@@ -142,6 +142,12 @@ hr {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+
+    > .post-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 50%;
+    }
   }
 }
 
@@ -151,17 +157,17 @@ hr {
   border-radius: 6px;
   padding: 1.5rem;
   transition: all 0.2s ease;
-}
 
-.post-card h2, .post-card h3 {
-  color: var(--vp-c-text-1);
-  font-weight: 300;
-  margin-top: 0;
-}
+  h2, h3 {
+    color: var(--vp-c-text-1);
+    font-weight: 300;
+    margin-top: 0;
+  }
 
-.post-card .excerpt {
-  margin-top: .5rem;
-  color: var(--vp-c-text-3);
+  .excerpt {
+    margin-top: .5rem;
+    color: var(--vp-c-text-3);
+  }
 }
 
 /*************************
@@ -176,11 +182,11 @@ hr {
   padding: .2rem .6rem;
   font-size: .8rem;
   margin-right: .25rem;
-}
 
-.theme-badge:hover, .tag:hover {
-  background: var(--vp-c-brand);
-  color: #0f0f0f;
+  &:hover {
+    background: var(--vp-c-brand);
+    color: #0f0f0f;
+  }
 }
 
 /*************************
@@ -194,41 +200,43 @@ hr {
 .VPSidebar { 
   background: var(--vp-c-bg); 
   border-right: 1px solid var(--vp-c-divider); 
-}
 
-.VPSidebar .link { 
-  color: var(--vp-c-text-2); 
-}
+  .link { 
+    color: var(--vp-c-text-2); 
 
-.VPSidebar .link:hover { 
-  color: var(--vp-c-text-1); 
+    &:hover { 
+      color: var(--vp-c-text-1); 
+    }
+  }
 }
 
 .VPDocOutline { 
   background: var(--vp-c-bg); 
   border-left: 1px solid var(--vp-c-divider); 
+
+  .outline-title { 
+    color: var(--vp-c-text-3); 
+    font-weight: 600; 
+  }
+
+  .outline-link { 
+    color: var(--vp-c-text-2);
+
+    &:hover {
+      color: var(--vp-c-text-1);
+    }
+  }
 }
 
-.VPDocOutline .outline-title { 
-  color: var(--vp-c-text-3); 
-  font-weight: 600; 
-}
+.VPNavBarMenuLink {
+  &.active {
+    color: rgb(254, 254, 254) !important;
+    font-weight: bold;
+  }
 
-.VPDocOutline .outline-link { 
-  color: var(--vp-c-text-2);
-}
-
-.VPDocOutline .outline-link:hover {
-  color: var(--vp-c-text-1);
-}
-
-.VPNavBarMenuLink.active {
-  color: rgb(254, 254, 254) !important;
-  font-weight: bold;
-}
-
-.VPNavBarMenuLink:hover {
-  color: var(--vp-c-brand-1) !important;
+  &:hover {
+    color: var(--vp-c-brand-1) !important;
+  }
 }
 
 /*************************
@@ -262,6 +270,7 @@ hr {
 
 .post-actions {
   margin-top: 1rem;
+  display: none;
 }
 
 .post-info {
@@ -282,26 +291,26 @@ hr {
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-}
 
-.pagination a {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  color: var(--vp-c-text-2);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
+  a {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    transition: all 0.2s ease;
 
-.pagination a:hover {
-  border-color: var(--vp-c-brand);
-  color: var(--vp-c-text-1);
-}
+    &:hover {
+      border-color: var(--vp-c-brand);
+      color: var(--vp-c-text-1);
+    }
+  }
 
-.pagination .current {
-  background: var(--vp-c-brand);
-  color: #0f0f0f;
-  border-color: var(--vp-c-brand);
+  .current {
+    background: var(--vp-c-brand);
+    color: #0f0f0f;
+    border-color: var(--vp-c-brand);
+  }
 }
 
 .pagination-nav {
@@ -309,16 +318,16 @@ hr {
   align-items: center;
   justify-content: center;
   min-width: 2.5rem;
+
+  &:hover .pagination-icon {
+    color: var(--vp-c-text-1);
+  }
 }
 
 .pagination-icon {
   width: 1.25rem;
   height: 1.25rem;
   color: var(--vp-c-text-2);
-}
-
-.pagination-nav:hover .pagination-icon {
-  color: var(--vp-c-text-1);
 }
 
 /*************************
@@ -350,10 +359,10 @@ hr {
   color: var(--vp-c-text-2);
   display: block;
   margin-bottom: 0.5rem;
-}
 
-.tag-post-link:hover {
-  color: var(--vp-c-text-1);
+  &:hover {
+    color: var(--vp-c-text-1);
+  }
 }
 
 .tag-post {
@@ -448,77 +457,75 @@ iframe {
 /*************************
  * Blog Post Content
  *************************/
-.VPDoc .content h1,
-.VPDoc .content h2,
-.VPDoc .content h3,
-.VPDoc .content h4,
-.VPDoc .content h5,
-.VPDoc .content h6 {
+.VPDoc .content h1, .VPDoc .content h2,
+.VPDoc .content h3, .VPDoc .content h4,
+.VPDoc .content h5, .VPDoc .content h6 {
   color: var(--vp-c-text-1);
   font-weight: 300;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
-.VPDoc .content h1 {
-  font-size: 2em;
-  letter-spacing: 2px;
-  line-height: 35px;
-}
+.VPDoc .content {
+  h1 {
+    font-size: 2em;
+    letter-spacing: 2px;
+    line-height: 35px;
+  }
 
-.VPDoc .content h2 {
-  font-size: 1.5em;
-  letter-spacing: 1px;
-}
+  h2 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+  }
 
-.VPDoc .content p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: var(--vp-c-text-2);
-}
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--vp-c-text-2);
+  }
 
-.VPDoc .content ul,
-.VPDoc .content ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  color: var(--vp-c-text-2);
-}
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: var(--vp-c-text-2);
+  }
 
-.VPDoc .content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-}
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
 
-.VPDoc .content blockquote {
-  border-left: 4px solid var(--vp-c-brand);
-  padding-left: 1rem;
-  margin: 1rem 0;
-  color: var(--vp-c-text-3);
-  font-style: italic;
-}
+  blockquote {
+    border-left: 4px solid var(--vp-c-brand);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: var(--vp-c-text-3);
+    font-style: italic;
+  }
 
-.VPDoc .content code {
-  background: rgba(99,176,107,.1);
-  color: var(--vp-c-brand);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9em;
-}
+  code {
+    background: rgba(99,176,107,.1);
+    color: var(--vp-c-brand);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
 
-.VPDoc .content pre {
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  padding: 1rem;
-  overflow-x: auto;
-  margin: 1rem 0;
-}
+  pre {
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
 
-.VPDoc .content pre code {
-  background: transparent;
-  color: var(--vp-c-text-2);
-  padding: 0;
+  pre code {
+    background: transparent;
+    color: var(--vp-c-text-2);
+    padding: 0;
+  }
 }
 
 .VPDocFooter {
@@ -545,18 +552,18 @@ iframe {
 
 .vp-doc div[class*='language-'] {
   background-color: unset !important;
-}
 
-.vp-doc [class*='language-'] > button.copy + span.lang {
-  top: 14px !important;
-}
+  > button.copy + span.lang {
+    top: 14px !important;
+  }
 
-.vp-doc [class*='language-']:hover > button.copy + span.lang {
-  opacity: 1 !important;
-}
+  &:hover > button.copy + span.lang {
+    opacity: 1 !important;
+  }
 
-.vp-doc [class*='language-'] > button.copy {
-  top: 39px !important;
+  > button.copy {
+    top: 39px !important;
+  }
 }
 
 .vp-doc .line-numbers-wrapper {
@@ -589,26 +596,28 @@ iframe {
 .function-plot {
   display: block;
   margin: 0 auto 20px;
-}
 
-.function-plot text {
-  font-size: 15px;
-  fill: var(--vp-c-text-2);
-}
+  text {
+    font-size: 15px;
+    fill: var(--vp-c-text-2);
+  }
 
-.function-plot path.origin {
-  stroke: var(--vp-c-text-3);
-  opacity: 1;
-}
+  path {
+    &.origin {
+      stroke: var(--vp-c-text-3);
+      opacity: 1;
+    }
+    &.line {
+      stroke: var(--vp-c-brand);
+    }
+  }
 
-.function-plot path.line {
-  stroke: var(--vp-c-brand);
-}
+  .tip circle {
+    fill: var(--vp-c-brand);
+  }
 
-.function-plot .tip circle {
-  fill: var(--vp-c-brand);
-}
-.function-plot .axis .tick line {
-  stroke: var(--vp-c-text-3);
-  opacity: 0.2;
+  .axis .tick line {
+    stroke: var(--vp-c-text-3);
+    opacity: 0.2;
+  }
 }
