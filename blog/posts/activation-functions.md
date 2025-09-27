@@ -221,135 +221,156 @@ import { onMounted } from "vue";
 import functionPlot from "function-plot";
 
 onMounted(() => {
-    functionPlot({
-        target: "#plot-sigmoid",
+    const opts = (target, fn, derivativeFn, xDomain, yDomain, title) => ({
+        target,
         width: 400,
         height: 300,
         grid: true,
-        data: [{
-            fn: "1 / (1 + exp(-x))",
-            derivative: {
-                fn: "(exp(-x)) / ((1 + exp(-x))^2)",
-                x0: 8,
-                updateOnMouseMove: true,
+        data: [
+            {
+                fn,
+                derivative: derivativeFn
+                    ? {
+                        fn: derivativeFn,
+                        x0: 0,
+                        updateOnMouseMove: true,
+                      }
+                    : undefined,
             },
-        }],
-        yAxis: { domain: [-0.1, 1.1] },
-        xAxis: { domain: [-10, 10] },
-        title: "Sigmoid Function",
-        disableZoom: true,
-    });
-    
-    functionPlot({
-        target: "#plot-tanh",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{
-            fn: "(exp(x) - exp(-x)) / (exp(x) + exp(-x))",
-        }],
-        yAxis: { domain: [-1.1, 1.1] },
-        xAxis: { domain: [-10, 10] },
-        title: "Tanh Function",
-        disableZoom: true,
-    });
-    
-    functionPlot({
-        target: "#plot-relu",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{
-            fn: "max(0, x)",
-        }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "ReLU Function",
-        disableZoom: true,
-    });
-    
-    functionPlot({
-        target: "#plot-leaky-relu",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "max(0.01 * x, x)" }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "Leaky ReLU Function",
+        ],
+        yAxis: { domain: yDomain },
+        xAxis: { domain: xDomain },
+        title,
         disableZoom: true,
     });
 
-    functionPlot({
-        target: "#plot-prelu",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "max(0.1 * x, x)" }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "PReLU Function (α=0.1)",
-        disableZoom: true,
-    });
+    // Sigmoid
+    functionPlot(
+        opts(
+            "#plot-sigmoid",
+            "1 / (1 + exp(-x))",
+            "(exp(-x)) / ((1 + exp(-x))^2)",
+            [-10, 10],
+            [-0.1, 1.1],
+            "Sigmoid Function"
+        )
+    );
 
-    functionPlot({
-        target: "#plot-gelu",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "0.5 * x * (1 + tanh(sqrt(2/PI) * (x + 0.044715 * x^3)))" }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "GELU Function",
-        disableZoom: true,
-    });
+    // Tanh
+    functionPlot(
+        opts(
+            "#plot-tanh",
+            "(exp(x) - exp(-x)) / (exp(x) + exp(-x))",
+            "1 - ((exp(x) - exp(-x)) / (exp(x) + exp(-x)))^2",
+            [-10, 10],
+            [-1.1, 1.1],
+            "Tanh Function"
+        )
+    );
 
-    functionPlot({
-        target: "#plot-softmax",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "exp(x) / (exp(x) + exp(1) + exp(2))" }],
-        yAxis: { domain: [-0.1, 1.1] },
-        xAxis: { domain: [-10, 10] },
-        title: "Softmax Function (Simplified 3-class)",
-        disableZoom: true,
-    });
+    // ReLU
+    // Note: Derivative is discontinuous at 0, but function-plot handles piecewise max() fine.
+    functionPlot(
+        opts(
+            "#plot-relu",
+            "max(0, x)",
+            "x > 0 ? 1 : 0",
+            [-10, 10],
+            [-1, 10],
+            "ReLU Function"
+        )
+    );
 
-    functionPlot({
-        target: "#plot-swish",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "x / (1 + exp(-x))" }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "Swish Function",
-        disableZoom: true,
-    });
+    // Leaky ReLU
+    functionPlot(
+        opts(
+            "#plot-leaky-relu",
+            "max(0.01 * x, x)",
+            "x > 0 ? 1 : 0.01",
+            [-10, 10],
+            [-1, 10],
+            "Leaky ReLU Function"
+        )
+    );
 
-    functionPlot({
-        target: "#plot-softplus",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "log(1 + exp(x))" }],
-        yAxis: { domain: [-1, 10] },
-        xAxis: { domain: [-10, 10] },
-        title: "Softplus Function",
-        disableZoom: true,
-    });
+    // PReLU (α = 0.1 for visualization)
+    functionPlot(
+        opts(
+            "#plot-prelu",
+            "max(0.1 * x, x)",
+            "x > 0 ? 1 : 0.1",
+            [-10, 10],
+            [-1, 10],
+            "PReLU Function (α=0.1)"
+        )
+    );
 
-    functionPlot({
-        target: "#plot-gaussian",
-        width: 400,
-        height: 300,
-        grid: true,
-        data: [{ fn: "(1 / sqrt(2 * PI)) * exp(-0.5 * x^2)" }],
-        yAxis: { domain: [-0.1, 0.5] },
-        xAxis: { domain: [-4, 4] },
-        title: "Gaussian Function (Standard Normal)",
-        disableZoom: true,
-    });
+    // GELU (tanh approximation)
+    // Derivative is a bit messy, but we can use the derivative of the tanh-approximation explicitly.
+    functionPlot(
+        opts(
+            "#plot-gelu",
+            "0.5 * x * (1 + tanh(sqrt(2/PI) * (x + 0.044715 * x^3)))",
+            // Approximate derivative of GELU (used in many implementations)
+            "0.5 * (1 + tanh(0.797885 * (x + 0.044715*x^3))) + " +
+            "0.5 * x * (1 - tanh(0.797885 * (x + 0.044715*x^3))^2) * " +
+            "0.797885 * (1 + 3*0.044715*x^2)",
+            [-10, 10],
+            [-1, 10],
+            "GELU Function"
+        )
+    );
+
+    // Softmax (simplified single-variable 3-class case)
+    functionPlot(
+        opts(
+            "#plot-softmax",
+            "exp(x) / (exp(x) + exp(1) + exp(2))",
+            "(exp(x)*(exp(1)+exp(2))) / (exp(x)+exp(1)+exp(2))^2",
+            [-10, 10],
+            [-0.1, 1.1],
+            "Softmax Function (Simplified 3-class)"
+        )
+    );
+
+    // Swish
+    // f(x) = x * sigmoid(x)
+    // f'(x) = sigmoid(x) + x * sigmoid(x)*(1 - sigmoid(x))
+    functionPlot(
+        opts(
+            "#plot-swish",
+            "x / (1 + exp(-x))",
+            "(1 / (1 + exp(-x))) + x * ((exp(-x)) / ((1 + exp(-x))^2))",
+            [-10, 10],
+            [-1, 10],
+            "Swish Function"
+        )
+    );
+
+    // Softplus
+    // derivative = sigmoid(x)
+    functionPlot(
+        opts(
+            "#plot-softplus",
+            "log(1 + exp(x))",
+            "1 / (1 + exp(-x))",
+            [-10, 10],
+            [-1, 10],
+            "Softplus Function"
+        )
+    );
+
+    // Gaussian (standard normal)
+    // derivative = -x * f(x)
+    functionPlot(
+        opts(
+            "#plot-gaussian",
+            "(1 / sqrt(2 * PI)) * exp(-0.5 * x^2)",
+            "-x * (1 / sqrt(2 * PI)) * exp(-0.5 * x^2)",
+            [-4, 4],
+            [-0.1, 0.5],
+            "Gaussian Function (Standard Normal)"
+        )
+    );
 });
 </script>
