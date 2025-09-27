@@ -14,6 +14,9 @@ let postIndex: number,
   nextUrl: string,
   nextTitle: string;
 
+const postLinkPart = window.location.pathname.split("/").filter(Boolean).pop();
+const postSourceURL = `https://raw.githubusercontent.com/NullDev/nulldev.org/refs/heads/master/blog/posts/${postLinkPart}.md`;
+
 watchEffect(() => {
   postIndex = posts.findIndex(post => post.title === frontmatter.value.title);
   prevIndex = postIndex > 0 ? postIndex - 1 : -1;
@@ -22,7 +25,7 @@ watchEffect(() => {
   nextIndex = postIndex < (posts.length - 1) ? postIndex + 1 : -1;
   nextUrl = nextIndex < 0 ? "" : withBase(posts[nextIndex].url);
   nextTitle = nextIndex < 0 ? "" : posts[nextIndex].title;
-})
+});
 
 function selectTag(tag: string) {
   blogStore.selectedTag = tag;
@@ -30,6 +33,9 @@ function selectTag(tag: string) {
 </script>
 
 <template>
+  <div class="nl--center">
+    <a class="post-source-link" :href="postSourceURL" target="_blank">View Post Source</a>
+  </div>
   <div class="post-footer">
     <div class="post-tags">
       <a v-for="tag in frontmatter.tags" 
