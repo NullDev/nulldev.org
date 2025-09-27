@@ -581,3 +581,34 @@ iframe {
   text-align: center;
   display:block;
 }
+
+/*************************
+ * Function Plots
+ *************************/
+
+.function-plot {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.function-plot text {
+  font-size: 15px;
+  fill: var(--vp-c-text-2);
+}
+
+.function-plot path.origin {
+  stroke: var(--vp-c-text-3);
+  opacity: 1;
+}
+
+.function-plot path.line {
+  stroke: var(--vp-c-brand);
+}
+
+.function-plot .tip circle {
+  fill: var(--vp-c-brand);
+}
+.function-plot .axis .tick line {
+  stroke: var(--vp-c-text-3);
+  opacity: 0.2;
+}

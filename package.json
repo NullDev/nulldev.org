@@ -62,5 +62,8 @@
     "typescript": "^5.2.2",
     "vitepress": "1.6.3",
     "vue": "^3.3.4"
+  },
+  "dependencies": {
+    "function-plot": "^1.25.1"
   }
 }
