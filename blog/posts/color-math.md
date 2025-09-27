@@ -242,6 +242,16 @@ $$
 $\textcolor{Yellow}{\text{The base for continuous growth}}$ is  
 $\textcolor{LightGreen}{\text{the unit quantity}}$ $\textcolor{Magenta}{\text{earning unit interest}}$ $\textcolor{Cyan}{\text{for unit time}}$, $\textcolor{Pink}{\text{compounded}}$ $\textcolor{Orange}{\text{as fast as possible}}$
 
+::: tip Also
+If the way above is too standard for you, you can also go the super cursed route: <br>
+As per [Eulers Identity](https://en.wikipedia.org/wiki/Euler%27s_identity) above, 
+
+$$
+{ \LARGE e = \sqrt[i\pi]{-1} } .
+$$
+
+:::
+
 ---
 
 ### E (Derivative Definition)
