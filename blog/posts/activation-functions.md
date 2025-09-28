@@ -52,7 +52,7 @@ During backpropagation, gradients are calculated via [Stochastic gradient descen
 - **Derivative:** $\sigma'(x) = \sigma(x)(1 - \sigma(x))$.
 - **Good for:** Binary classification tasks.
 - **Used for:** Probability predictions. 
-- **Bad for:** Deep networks (can cause vanishing gradients).
+- **Bad for:** Deep networks (can cause [vanishing gradients](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)).
 - **Range:** $(0, 1)$
 - **Order of continuity:** $C^\infty$
 
@@ -87,7 +87,7 @@ $$
 
 - **Good for:** Most hidden layers in deep networks (efficient and effective).
 - **Used for:** Image recognition, NLP tasks.
-- **Bad for:** Can lead to "dying ReLUs" where neurons output zero for all inputs.
+- **Bad for:** Can lead to ["dying ReLUs"](https://en.wikipedia.org/wiki/Rectified_linear_unit#Potential_problems) where neurons output zero for all inputs.
 - **Range:** $[0, \infty)$
 - **Order of continuity:** $C^0$
 
@@ -228,7 +228,7 @@ $$
 
 <small class="nl--center">
 <b>Disclaimer:</b><br>
-Gaussian functions are typically used in radial basis function (RBF) networks or probabilistic models,<br>
+Gaussian functions are typically used in [radial basis function (RBF)](https://en.wikipedia.org/wiki/Radial_basis_function) networks or probabilistic models,<br>
 not as standard activations in deep networks like CNNs or transformers.
 </small>
 
@@ -251,9 +251,10 @@ Modern frameworks optimize GELU, Swish, and Softplus well, so their extra comput
 - **Vanishing gradients:** Sigmoid and tanh squish inputs into small ranges, which can make gradients vanish in deep networks.
   - See [Vanishing gradient problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)
 - **Dying ReLUs:** Large learning rates can push neurons permanently into the negative regime, making them output 0 forever.
-- **Exploding outputs:** Stacking linear activations or using softmax incorrectly can lead to numerical instability.
+  - See [Potential Problems of ReLUs](https://en.wikipedia.org/wiki/Rectified_linear_unit#Potential_problems)
+- **Exploding outputs:** Stacking linear activations or using softmax incorrectly can lead to [numerical instability](https://en.wikipedia.org/wiki/Numerical_stability).
 - **Misusing softmax:** Applying softmax to regression outputs or applying it twice can distort predictions.
-- **Overfitting with PReLU:** Learning too many extra parameters can overfit small datasets.
+- **Overfitting with PReLU:** Learning too many extra parameters can [overfit](https://en.wikipedia.org/wiki/Overfitting) small datasets.
 
 ---
 

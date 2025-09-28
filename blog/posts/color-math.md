@@ -244,7 +244,7 @@ $\textcolor{LightGreen}{\text{the unit quantity}}$ $\textcolor{Magenta}{\text{ea
 
 ::: tip Also
 If the way above is too standard for you, you can also go the super cursed route: <br>
-As per [Eulers Identity](https://en.wikipedia.org/wiki/Euler%27s_identity) above, 
+As per [Eulers Identity](https://en.wikipedia.org/wiki/Euler%27s_identity) ($e^{i \pi} = -1$) above, 
 
 $$
 { \LARGE e = \sqrt[i\pi]{-1} } .
