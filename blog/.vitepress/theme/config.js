@@ -17,9 +17,9 @@ const themeConfig = {
     mdLineNums: true,  // line numbers for code block
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-        { text: "📚 Blog", link: "/" },
-        { text: "🏠 Home", link: "https://nulldev.org", target: "_self" },
-        { text: "🔖 Tags", link: "/tags" },
+        { text: "Blog", link: "/" },
+        { text: "Home", link: "https://nulldev.org", target: "_self" },
+        { text: "Tags", link: "/tags" },
     ],
     aside: false,
     socialLinks: [

@@ -243,9 +243,8 @@ hr {
  * Footer
  *************************/
 .VPFooter {
-  background: var(--vp-c-bg);
-  border-top: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg) !important;
+  border-top: 1px solid var(--vp-c-divider) !important;
   padding: 13px !important;
 }
 
