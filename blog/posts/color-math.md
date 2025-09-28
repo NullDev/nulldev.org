@@ -221,7 +221,7 @@ $$
 
 $\textcolor{Yellow}{\text{Growth}}$ in a $\textcolor{LightGreen}{\text{perpendicular direction}}$ over $\textcolor{Magenta}{\text{time}}$  
 is circular: $\textcolor{Pink}{\text{here are the}}$ $\textcolor{Cyan}{\text{horizontal}}$  
-and $\textcolor{Orange}{\text{vertical}}$ coordinates
+and $\textcolor{Orange}{\text{vertical}}$ coordinates.
 
 ## E
 
@@ -240,7 +240,7 @@ $$
 $$
 
 $\textcolor{Yellow}{\text{The base for continuous growth}}$ is  
-$\textcolor{LightGreen}{\text{the unit quantity}}$ $\textcolor{Magenta}{\text{earning unit interest}}$ $\textcolor{Cyan}{\text{for unit time}}$, $\textcolor{Pink}{\text{compounded}}$ $\textcolor{Orange}{\text{as fast as possible}}$
+$\textcolor{LightGreen}{\text{the unit quantity}}$ $\textcolor{Magenta}{\text{earning unit interest}}$ $\textcolor{Cyan}{\text{for unit time}}$, $\textcolor{Pink}{\text{compounded}}$ $\textcolor{Orange}{\text{as fast as possible}}$.
 
 ::: tip Also
 If the way above is too standard for you, you can also go the super cursed route: <br>
@@ -307,7 +307,7 @@ $\textcolor{LightGreen}{\text{the unit quantity}}$ $\textcolor{Magenta}{\text{ea
 
 plus $\textcolor{Cyan}{\text{the interest on the interest}}$  
 
-plus $\textcolor{Orange}{\text{the interest on the interest on the interest}}$ and $\textcolor{Pink}{\text{so on}}$
+plus $\textcolor{Orange}{\text{the interest on the interest on the interest}}$ and $\textcolor{Pink}{\text{so on}}$.
 
 ## Convolution
 
@@ -344,5 +344,7 @@ $\textcolor{Cyan}{\text{rate of change}}$ $\textcolor{Pink}{\text{of quantity}}$
 ---
 
 Wow, you made it to the bottom. Here, have a cookie: 🍪
+
+---
 
 <sub>Loosely based on Kalid Azad's [ColorizedMath](https://betterexplained.com/ColorizedMath/) - but cleaned up and extended.</sub>
