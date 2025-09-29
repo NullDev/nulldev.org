@@ -499,4 +499,8 @@ $$
 
 Tensor here. Tensor there. Tensors everywhere.
 
-<small>I am so sorry but I am too lazy to write a better conclusion.</small>
+<small>
+I am so sorry but I am too lazy to write a better conclusion. <br><br>
+But here you have a post-editorial note: <br>
+I should not have made that god damn 6D tensor in CSS...
+</small>
