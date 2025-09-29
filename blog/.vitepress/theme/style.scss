@@ -592,6 +592,78 @@ iframe {
   display:block;
 }
 
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+  margin: 3em 0em 0em 0.3em;
+  color: #FFF;
+
+  div {
+    position: absolute;
+    transform-style: preserve-3d;
+
+    div {
+      animation: un-spin 20s linear infinite;
+    }
+  }
+}
+
+.tensor-5d {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4em;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: spin 25s linear infinite;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 9em;
+
+  .cube {
+    width: 20px;
+  }
+}
+
+.tensor-5d .cube {
+  animation: none;
+}
+
+.tensor-5d .cube > div > div {
+  animation: un-spin 25s linear infinite;
+}
+
+.tensor-6d {
+  position: relative;
+  width: 0;
+  height: 12em;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  animation: spin 30s linear infinite;
+  margin-top: 10em;
+  margin-bottom: 12em;
+}
+
+.tensor-6d .cube {
+  position: absolute;
+  transform: translate3d(calc(var(--x) * 6em), calc(var(--y) * 6em), calc(var(--z) * 6em));
+  animation: none; /* prevent chaos */
+}
+
+.tensor-6d .cube > div > div {
+  animation: un-spin 30s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateX(-0.1turn) rotateY(0turn); }
+  to { transform: rotateX(-0.1turn) rotateY(1turn); }
+}
+
+@keyframes un-spin {
+  from { transform: rotateY(0turn); }
+  to { transform: rotateY(-1turn); }
+}
+
 /*************************
  * Function Plots
  *************************/
