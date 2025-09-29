@@ -17,7 +17,10 @@ import { onMounted } from "vue";
 import functionPlot from "function-plot";
 
 const draw = function(){
-    const contentsBounds = document.querySelector("div.content-container").getBoundingClientRect();
+    const dv = document.querySelector("div.content-container");
+    if (!dv) return;
+
+    const contentsBounds = dv.getBoundingClientRect();
     const ratio = (contentsBounds.width - 50) / 600;
     const opts = (target, fn, derivativeFn, xDomain, yDomain, title) => ({
         target,

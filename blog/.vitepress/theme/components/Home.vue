@@ -13,7 +13,10 @@ function showPosts() {
 }
 
 const draw = function(){
-    const contentsBounds = document.querySelector("article.post-card").getBoundingClientRect();
+    const dv = document.querySelector("article.post-card");
+    if (!dv) return;
+
+    const contentsBounds = dv.getBoundingClientRect();
     const ratio = (contentsBounds.width - 50) / 600;
     const opts = (target, fn, derivativeFn, xDomain, yDomain, title) => ({
         target,
