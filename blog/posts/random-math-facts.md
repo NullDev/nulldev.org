@@ -7,6 +7,16 @@ tags:
 ---
 Super useless math facts you probably didn't know or don't care to know. Because why not.
 
+<div id="preview" style="margin: 40px 0;">
+
+::: tip Random Math Fact:
+
+<div id="fact-p"></div>
+
+:::
+
+</div>
+
 ---
 
 # Get a random one
@@ -150,7 +160,7 @@ Super useless math facts you probably didn't know or don't care to know. Because
 - An order preserving map on a complete lattice has a fixed point.
 - A matrix is invertible if and only if its determinant is non-zero.
 - The sum of the first n odd numbers is n².
-- In topology, a coffee mug and a donut are homotopically equivalent
+- In topology, a coffee mug and a donut are homotopically equivalent.
 - A group is called simple if it has no normal subgroups other than the trivial group and the group itself.
 - The number of subsets of a set with n elements is 2ⁿ.
 - In an infinite set, the number of elements and the number of subsets of those elements are incomparable.
@@ -171,7 +181,7 @@ Super useless math facts you probably didn't know or don't care to know. Because
 - The derivative of an odd function is an even function.
 - A matrix and its transpose have the same rank.
 - A midpoint convex function is not necessarily convex, but a strictly midpoint convex function is strictly convex.
-- A set is convex iff its indicator function is a convex function. (Indicator function is infinite off the set.)
+- A set is convex iff its indicator function is a convex function. (Indicator function is infinite off the set).
 - Every C¹ differential structure on a manifold can be uniquely smoothed to a C^∞ differential structure.
 - The Hilbert transform is an anti-involution, i.e. H(H(u)) = -u.
 - Jacobi elliptic functions have two singularities of order 1 inside the fundamental parallelogram.
@@ -192,6 +202,8 @@ const setRandomFact = (allFacts) => {
 };
 
 onMounted(() => {
+  document.querySelector("#preview").style.display = "none";
+
   const allFacts = getAllfacts();
   setRandomFact(allFacts);
   document.getElementById("another-one")?.addEventListener("click", e => {

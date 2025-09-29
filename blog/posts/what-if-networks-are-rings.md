@@ -12,7 +12,26 @@ tags:
 ---
 We can think differently about networks and subnets using modular arithmetic & ring theory. Should we? Probably not.
 
+<div id="preview" style="height: 100%; width: 100%; display: block; margin: 40px 0;">
+
+$$
+\color{white}{[2001:db8::] \pmod{2^{64}}}
+$$
+
+$$
+\color{white}{\text{IPv6} = \mathbb{Z}/2^{128}\mathbb{Z}}
+$$
+
+</div>
+
 ---
+
+<script setup>
+    import { onMounted } from "vue";
+    onMounted(() => {
+        document.querySelector("#preview").style.display = "none";
+    });
+</script>
 
 # What if networks are just rings?
 

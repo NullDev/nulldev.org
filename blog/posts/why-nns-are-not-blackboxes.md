@@ -9,9 +9,81 @@ tags:
 - neural-networks
 - machine-learning
 ---
-Contrary to popular belief, NNs are not magic.
+Contrary to popular belief, NNs are not magic. Under the hood, they are fully deterministic algorithms that can be explained step by step. <br>
+
+<div id="preview" style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+    <svg style="height: auto; width: 300px;" alt="Neural Network" viewBox="0 0 800 440" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="neuronGradient">
+                <stop offset="0%" stop-color="#667768ff"/>
+                <stop offset="100%" stop-color="#63B06B"/>
+            </radialGradient>
+            <path id="sigmoid" d="M0,50 C10,50 20,50 30,48 C40,45 45,30 50,20 C55,10 60,5 70,2 C80,0 90,0 100,0"
+                stroke="#000" fill="none" stroke-width="2"/>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                    refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#999"/>
+            </marker>
+        </defs>
+        <line x1="100" y1="95"  x2="260" y2="140" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="100" y1="245" x2="257" y2="150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="100" y1="395" x2="260" y2="160" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="100" y1="95"  x2="260" y2="340" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="100" y1="245" x2="257" y2="350" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="100" y1="395" x2="260" y2="360" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <text x="90" y="100" text-anchor="end" fill="#9e9e9eff" font-family="Arial">x₁</text>
+        <text x="90" y="250" text-anchor="end" fill="#9e9e9eff" font-family="Arial">x₂</text>
+        <text x="90" y="400" text-anchor="end" fill="#9e9e9eff" font-family="Arial">x₃</text>
+        <text x="140" y="100" fill="#868686ff" font-family="Arial">w₁,₁</text>
+        <text x="140" y="150" fill="#868686ff" font-family="Arial">w₂,₁</text>
+        <text x="140" y="235" fill="#868686ff" font-family="Arial">w₁,₂</text>
+        <text x="140" y="265" fill="#868686ff" font-family="Arial">w₂,₂</text>
+        <text x="140" y="350" fill="#868686ff" font-family="Arial">w₁,₃</text>
+        <text x="140" y="400" fill="#868686ff" font-family="Arial">w₂,₃</text>
+        <g transform="translate(300,150)">
+            <circle r="40" fill="url(#neuronGradient)" stroke="#9e9e9eff" stroke-width="2"/>
+            <text x="-10" y="10" font-family="Arial" font-size="30" fill="white">n₁</text>
+        </g>
+        <g transform="translate(300,350)">
+            <circle r="40" fill="url(#neuronGradient)" stroke="#9e9e9eff" stroke-width="2"/>
+            <text x="-10" y="10" font-family="Arial" font-size="30" fill="white">n₂</text>
+        </g>
+        <rect x="400" y="110" width="120" height="80" fill="#63B06B" stroke="#9e9e9eff" stroke-width="2" rx="10"/>
+        <text x="460" y="145" text-anchor="middle" font-family="Arial" fill="#FFF" font-size="14">Activation</text>
+        <text x="460" y="165" text-anchor="middle" font-family="Arial" fill="#FFF" font-size="14">Function</text>
+        <rect x="400" y="310" width="120" height="80" fill="#63B06B" stroke="#9e9e9eff" stroke-width="2" rx="10"/>
+        <text x="460" y="345" text-anchor="middle" font-family="Arial" fill="#FFF" font-size="14">Activation</text>
+        <text x="460" y="365" text-anchor="middle" font-family="Arial" fill="#FFF" font-size="14">Function</text>
+        <g transform="translate(410,130) scale(1,0.4)">
+            <use href="#sigmoid"/>
+        </g>
+        <g transform="translate(410,330) scale(1,0.4)">
+            <use href="#sigmoid"/>
+        </g>
+        <line x1="340" y1="150" x2="400" y2="150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="340" y1="350" x2="400" y2="350" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="520" y1="150" x2="700" y2="150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="520" y1="350" x2="700" y2="350" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <text x="720" y="155" fill="#9e9e9eff" font-family="Arial">y₁</text>
+        <text x="720" y="355" fill="#9e9e9eff" font-family="Arial">y₂</text>
+        <line x1="300" y1="50" x2="300" y2="110" stroke="#999" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+        <line x1="300" y1="250" x2="300" y2="310" stroke="#999" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+        <text x="290" y="40" fill="#868686ff" font-family="Arial">+b₁</text>
+        <text x="290" y="240" fill="#868686ff" font-family="Arial">+b₂</text>
+    </svg>
+</div>
 
 ---
+
+<script setup>
+    import { onMounted } from "vue";
+    onMounted(() => {
+        document.querySelector("#preview svg").style.width = "600px";
+    });
+</script>
+
+<small class="nl--center">Image Source: <br>
+https://www.gilesthomas.com/2025/02/basic-neural-network-matrix-maths-part-1 </small>
 
 # Why neural networks are not mysterious black boxes
 

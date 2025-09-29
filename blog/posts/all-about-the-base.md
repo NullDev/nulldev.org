@@ -9,7 +9,26 @@ tags:
 ---
 Weird Number Bases are weird. But also kinda cool. And kinda useless. But why stop at integer bases?
 
+<div id="preview" style="height: 100%; width: 100%; display: block; margin: 40px 0;">
+
+$$
+\color{white}{\sum_{k=-\infty}^n d_k b^k}
+$$
+
+$$
+\color{white}{d_k \in \{0,1,\ldots,\lfloor b \rfloor\}}
+$$
+
+</div>
+
 ---
+
+<script setup>
+    import { onMounted } from "vue";
+    onMounted(() => {
+        document.querySelector("#preview").style.display = "none";
+    });
+</script>
 
 # Number systems are weird
 
@@ -40,7 +59,7 @@ $$
 or, if you want to be more formal and fancy,
 
 $$
-\sum_{k=-\infty}^n d_k b^k,
+\sum_{k=-\infty}^n d_k b^k, 
 $$
 
 where digits $d_k \in \{0,1,\ldots,\lfloor b \rfloor\}$ (<- the digit set).

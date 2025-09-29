@@ -10,6 +10,57 @@ tags:
 ---
 What are activation functions in neural networks, what kind of activations are there, when to use which, and why do they matter?
 
+<div id="plot-tanh-preview"></div>
+
+<script>
+import { onMounted } from "vue";
+import functionPlot from "function-plot";
+
+const draw = function(){
+    const contentsBounds = document.querySelector("div.content-container").getBoundingClientRect();
+    const ratio = (contentsBounds.width - 50) / 600;
+    const opts = (target, fn, derivativeFn, xDomain, yDomain, title) => ({
+        target,
+        width: 600 * ratio,
+        height: 400 * ratio,
+        grid: true,
+        data: [
+            {
+                fn,
+                derivative: derivativeFn
+                    ? {
+                        fn: derivativeFn,
+                        x0: 0,
+                        updateOnMouseMove: true,
+                      }
+                    : undefined,
+            },
+        ],
+        yAxis: { domain: yDomain },
+        xAxis: { domain: xDomain },
+        title,
+        disableZoom: true,
+    });
+
+    // Tanh
+    functionPlot(
+        opts(
+            "#plot-tanh-preview",
+            "(exp(x) - exp(-x)) / (exp(x) + exp(-x))",
+            "1 - ((exp(x) - exp(-x)) / (exp(x) + exp(-x)))^2",
+            [-10, 10],
+            [-1.1, 1.1],
+            "Tanh Function"
+        )
+    );
+};
+
+onMounted(() => {
+    draw();
+    window.addEventListener("resize", draw);
+});
+</script>
+
 ---
 
 # What are activation functions?

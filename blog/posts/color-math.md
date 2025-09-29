@@ -6,9 +6,28 @@ tags:
 - math
 - equations
 ---
-Some cool math explained with colors.
+Some cool math explained with colors. You have no idea how painful this was to wriite in MathJax...
+
+<div id="preview" style="height: 100%; width: 100%; display: block; margin: 60px 0;">
+
+$$
+\color{white}{
+(\textcolor{Cyan}{f} \,\textcolor{Pink}{*}\, \textcolor{LightGreen}{g})(\textcolor{Orange}{t})
+\;\;\overset{\text{def}}{=}\;\;
+\textcolor{Yellow}{\int_{-\infty}^{\infty}} \textcolor{Cyan}{f(\tau)}\,\textcolor{LightGreen}{g(\textcolor{Orange}{t}\textcolor{Magenta}{-\tau})}\,\textcolor{Yellow}{d\tau}
+}
+$$
+
+</div>
 
 ---
+
+<script setup>
+    import { onMounted } from "vue";
+    onMounted(() => {
+        document.querySelector("#preview").style.display = "none";
+    });
+</script>
 
 # Color Maths
 
