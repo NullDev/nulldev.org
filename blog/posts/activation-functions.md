@@ -282,7 +282,7 @@ $$
 
 <small class="nl--center">
 <b>Disclaimer:</b><br>
-Gaussian functions are typically used in [radial basis function (RBF)](https://en.wikipedia.org/wiki/Radial_basis_function) networks or probabilistic models,<br>
+Gaussian functions are typically used in <a href="https://en.wikipedia.org/wiki/Radial_basis_function" target="_blank">radial basis function (RBF)</a> networks or probabilistic models,<br>
 not as standard activations in deep networks like CNNs or transformers.
 </small>
 
