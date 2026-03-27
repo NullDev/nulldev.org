@@ -7,12 +7,6 @@ tags:
 ---
 Super useless math facts you probably didn't know or don't care to know. Because why not.
 
-::: warning Now available as an API!
-
-Check out https://nulldev.org/mathfacts
-
-:::
-
 <div id="preview" style="margin: 40px 0;">
 
 ::: tip Random Math Fact:
@@ -24,6 +18,12 @@ Check out https://nulldev.org/mathfacts
 </div>
 
 ---
+
+::: warning Now available as an API!
+
+Check out https://nulldev.org/mathfacts
+
+:::
 
 # Get a random one
 
